@@ -28,4 +28,6 @@ public class KeyPickUp : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+
 }
