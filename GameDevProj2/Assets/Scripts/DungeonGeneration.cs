@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class DungeonGeneration : MonoBehaviour
 {
-    public GameObject CornerOne;
-    public GameObject CornerTwo;
-    public GameObject CornerThree;
-    public GameObject CornerFour;
-    public GameObject FourSidesOne;
-    public GameObject FourSideTwo;
-    public GameObject FourSideThree;
+    public GameObject RoomCornerBasic;
+    public GameObject RoomBottomLeftCorner;
+    public GameObject RoomBottomRightCorner;
+    public GameObject RoomCornerLeft;
+    public GameObject Room0101;
+    public GameObject Room1111;
+    public GameObject RoomCircle1111;
+    public GameObject RoomBroken1011;
+    public GameObject Room1110;
+    
 
 
     // The Acutally Rooms
@@ -26,13 +29,34 @@ public class DungeonGeneration : MonoBehaviour
 
     void Start()
     {
-        RoomFive = Instantiate(FourSidesOne);
-        RoomFive.transform.position = Vector3.zero;
-        RoomSix = Instantiate(CornerOne);
-        RoomSix.transform.position = new Vector3(9, 0, 0);
-        RoomThree = Instantiate(CornerTwo);
+        RoomOne = Instantiate(RoomCornerLeft);
+        RoomOne.transform.position = new Vector3(-9, 9, 0);
+
+        RoomTwo = Instantiate(Room1111);
+        RoomTwo.transform.position = new Vector3(0, 9, 0);
+
+        RoomThree = Instantiate(RoomCornerBasic);
         RoomThree.transform.position = new Vector3(9, 9, 0);
 
+        RoomFour = Instantiate(Room1110);
+        RoomFour.transform.position = new Vector3(-9, 0, 0);
+
+        RoomFive = Instantiate(Room0101);
+        RoomFive.transform.position = Vector3.zero;
+
+        RoomEight = Instantiate(RoomBroken1011);
+        RoomEight.transform.position = new Vector3(9, 0, 0);
+
+        RoomSeven = Instantiate(RoomBottomLeftCorner);
+        RoomSeven.transform.position = new Vector3(-9, -9, 0);
+
+        RoomEight = Instantiate(RoomCircle1111);
+        RoomEight.transform.position = new Vector3(0, -9, 0);
+
+        RoomNine = Instantiate(RoomBottomRightCorner);
+        RoomNine.transform.position = new Vector3(9, -9, 0);
+
+      
 
     }
 }

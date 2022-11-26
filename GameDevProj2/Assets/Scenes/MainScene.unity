@@ -236,13 +236,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6003382745e4d1a45aff4ff9fd961249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CornerOne: {fileID: 7216031799991719468, guid: b9d90a3f76833b74a8b2de3562bb0cc5, type: 3}
-  CornerTwo: {fileID: 8530223921643853924, guid: 6f8093dd7e8cb6a4fb8ca7de25053c5f, type: 3}
-  CornerThree: {fileID: 0}
-  CornerFour: {fileID: 0}
-  FourSidesOne: {fileID: 2221298902904768377, guid: 1e49858f59641d4479b91bb8feb0c65d, type: 3}
-  FourSideTwo: {fileID: 0}
-  FourSideThree: {fileID: 0}
+  RoomCornerBasic: {fileID: 8530223921643853924, guid: 6f8093dd7e8cb6a4fb8ca7de25053c5f, type: 3}
+  RoomBottomLeftCorner: {fileID: 4448674824293299316, guid: cad5758e9b6d3124e974a6be86293224, type: 3}
+  RoomBottomRightCorner: {fileID: 8852407068683057195, guid: d9de73d9eeed06d40b04272aa004cc53, type: 3}
+  RoomCornerLeft: {fileID: 4240279189997398380, guid: 7b05ed035c160e4489ac162034609b53, type: 3}
+  Room0101: {fileID: 6921647585592234400, guid: 5ab3996df50bd194da191f0946ac55ae, type: 3}
+  Room1111: {fileID: 5715088919966896786, guid: cb58d7c1e82c1c940879cf7d99064170, type: 3}
+  RoomCircle1111: {fileID: 2221298902904768377, guid: 1e49858f59641d4479b91bb8feb0c65d, type: 3}
+  RoomBroken1011: {fileID: 7216031799991719468, guid: b9d90a3f76833b74a8b2de3562bb0cc5, type: 3}
+  Room1110: {fileID: 3079047807363077741, guid: 39a4740703415914ea7208c6039467b1, type: 3}
 --- !u!4 &1981250756
 Transform:
   m_ObjectHideFlags: 0
