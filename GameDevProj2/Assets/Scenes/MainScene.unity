@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1013789243532893958, guid: 927f76e0501ec2f4291ff5fe70a8a2c1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.113
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146927144345313999, guid: 927f76e0501ec2f4291ff5fe70a8a2c1, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1643484509}
+    - target: {fileID: 8636882558870183878, guid: 927f76e0501ec2f4291ff5fe70a8a2c1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.069
+      objectReference: {fileID: 0}
     - target: {fileID: 9164434269245069329, guid: 927f76e0501ec2f4291ff5fe70a8a2c1, type: 3}
       propertyPath: m_Name
       value: PlayerPrefab
@@ -264,6 +276,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1643484509 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9164434269245069329, guid: 927f76e0501ec2f4291ff5fe70a8a2c1, type: 3}
+  m_PrefabInstance: {fileID: 623618280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1981250754
 GameObject:
   m_ObjectHideFlags: 0
