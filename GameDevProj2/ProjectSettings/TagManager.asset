@@ -7,6 +7,8 @@ TagManager:
   - Boundary
   - TorchPickUp
   - KeyPickUp
+  - HitBox
+  - Enemy
   layers:
   - Default
   - TransparentFX
