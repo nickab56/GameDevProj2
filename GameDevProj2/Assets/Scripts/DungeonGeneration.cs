@@ -29,32 +29,33 @@ public class DungeonGeneration : MonoBehaviour
 
     void Start()
     {
+        
         RoomOne = Instantiate(RoomCornerLeft);
-        RoomOne.transform.position = new Vector3(-80, 80, 0);
+        RoomOne.transform.position = new Vector3(-46, 46, 0);
 
         RoomTwo = Instantiate(Room1111);
-        RoomTwo.transform.position = new Vector3(0, 80, 0);
+        RoomTwo.transform.position = new Vector3(0, 46, 0);
 
         RoomThree = Instantiate(RoomCornerBasic);
-        RoomThree.transform.position = new Vector3(80, 80, 0);
+        RoomThree.transform.position = new Vector3(46, 46, 0);
 
         RoomFour = Instantiate(Room1110);
-        RoomFour.transform.position = new Vector3(-80, 0, 0);
+        RoomFour.transform.position = new Vector3(-46, 0, 0);
 
         RoomFive = Instantiate(Room0101);
         RoomFive.transform.position = Vector3.zero;
 
         RoomSix = Instantiate(RoomBroken1011);
-        RoomSix.transform.position = new Vector3(80, 0, 0);
+        RoomSix.transform.position = new Vector3(46, 0, 0);
 
         RoomSeven = Instantiate(RoomBottomLeftCorner);
-        RoomSeven.transform.position = new Vector3(-80, -80, 0);
+        RoomSeven.transform.position = new Vector3(-46, -46, 0);
 
         RoomEight = Instantiate(RoomCircle1111);
-        RoomEight.transform.position = new Vector3(0, -80, 0);
+        RoomEight.transform.position = new Vector3(0, -46, 0);
 
         RoomNine = Instantiate(RoomBottomRightCorner);
-        RoomNine.transform.position = new Vector3(80, -80, 0);
+        RoomNine.transform.position = new Vector3(46, -46, 0);
 
       
 
