@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Manager : MonoBehaviour
+public class HitBoxNA : MonoBehaviour
 {
-    
-
+    public Transform CrossHair;
     void Start()
     {
         
@@ -14,6 +13,6 @@ public class Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Cursor.visible = false;
+        transform.position = CrossHair.position;
     }
 }
