@@ -5,6 +5,11 @@ using UnityEngine;
 public class MeleeScriptNA : MonoBehaviour
 {
     public bool hitting = false;
+    public bool inCoolDown = false;
+
+    private float coolDown = 2f;
+    private float hitTime = 1f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -15,13 +20,21 @@ public class MeleeScriptNA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && inCoolDown == false)
         {
             hitting = true;
+            inCoolDown = true;
+            StartCoroutine(CoolDownTime());
+            StartCoroutine(HitTime());
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
         GameObject gameObject = collision.gameObject;
 
@@ -29,6 +42,18 @@ public class MeleeScriptNA : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator CoolDownTime()
+    {
+        yield return new WaitForSeconds(coolDown);
+        inCoolDown = false;
+    }
+
+    IEnumerator HitTime()
+    {
+        yield return new WaitForSeconds(hitTime);
+        hitting = false;
     }
 
 }
