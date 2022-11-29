@@ -16,20 +16,22 @@ public class WayPoints : MonoBehaviour
     {
         enemyAi = GetComponent<AI>();
         dir = Vector2.zero;
-        findClosest();
+        //findClosest();
     }
 
     public Vector2 evaluateWaypoint()
     {
-        float dirX = Random.Range(0, 1.1f);
-        int w = Random.Range(0, 1);
-        if (w == 0)
-            dirX *= -1;
+        float dirX = 0;
+        //float dirX = Random.Range(0, 1.1f);
+        //int w = Random.Range(0, 1);
+        //if (w == 0)
+        //    dirX *= -1;
 
         dir = waypoints[currentWaypoint].transform.position - this.transform.position;
         dir.x += dirX;
         dir.y += dirX;
-        if (dir.magnitude < 1) //enemy has reached the waypoint
+        Debug.Log("Enemy Direction: " + dir.x + ", " + dir.y);
+        if (dir.magnitude < 0.01) //enemy has reached the waypoint
         {
             currentWaypoint++;
             currentWaypoint %= waypoints.Length;
@@ -73,6 +75,6 @@ public class WayPoints : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }
