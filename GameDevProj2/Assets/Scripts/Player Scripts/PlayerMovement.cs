@@ -24,7 +24,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         move();
-    }
+        Player.transform.rotation = Quaternion.Euler(Player.transform.rotation.x, Player.transform.rotation.y, 0f);
+    }   
 
     private void move()
     {
