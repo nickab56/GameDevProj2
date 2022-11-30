@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitting: 0
   inCoolDown: 0
+  Weapon: {fileID: 7289356673960086562, guid: c2c46bcb116552a46a0d5d5907b960b5, type: 3}
 --- !u!1 &3279336430918142387
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ TagManager:
   - KeyPickUp
   - HitBox
   - Enemy
+  - Weapon
   layers:
   - Default
   - TransparentFX
