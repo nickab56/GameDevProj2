@@ -6,6 +6,7 @@ public class MeleeScriptNA : MonoBehaviour
 {
     public bool hitting = false;
     public bool inCoolDown = false;
+    public GameObject Weapon;
 
     private float coolDown = 2f;
     private float hitTime = 1f;
@@ -26,13 +27,11 @@ public class MeleeScriptNA : MonoBehaviour
             inCoolDown = true;
             StartCoroutine(CoolDownTime());
             StartCoroutine(HitTime());
+
+            Instantiate(Weapon);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
