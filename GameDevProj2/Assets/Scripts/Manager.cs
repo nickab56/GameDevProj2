@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
-    
+    public float pastTime;
+    public float time;
 
     void Start()
     {
