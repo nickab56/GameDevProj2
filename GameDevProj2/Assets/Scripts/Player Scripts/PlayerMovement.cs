@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private float localSpeed = 0;
     public bool walkInCoolDown = false;
 
+    // Get direction the player is facing (left by default)
+    bool isFacingLeft = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,17 +26,14 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         move();
-        Player.transform.rotation = Quaternion.Euler(Player.transform.rotation.x, Player.transform.rotation.y, 0f);
+        //Player.transform.rotation = Quaternion.Euler(Player.transform.rotation.x, Player.transform.rotation.y, 0f);
     }   
 
     private void move()
     {
         direction = Vector2.zero;
 
-
-
         Vector2 currentPosition = Camera.main.WorldToScreenPoint(this.transform.position);
-
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
@@ -51,6 +50,11 @@ public class PlayerMovement : MonoBehaviour
             localSpeed += speed;
             //WalkEffect();
             //WalkTrail();
+            if (isFacingLeft)
+            {
+                Player.transform.Rotate(0.0f, 180.0f, 0.0f);
+                isFacingLeft = false;
+            }
         }
 
 
@@ -69,6 +73,11 @@ public class PlayerMovement : MonoBehaviour
             localSpeed += speed;
             //WalkEffect();
             // WalkTrail();
+            if (!isFacingLeft)
+            {
+                Player.transform.Rotate(0.0f, 180.0f, 0.0f);
+                isFacingLeft = true;
+            }
         }
 
         if (direction != Vector2.zero)
