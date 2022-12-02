@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public GameObject Player;
+    public Transform Player;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = Player.transform.position;
+        this.transform.position = Player.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

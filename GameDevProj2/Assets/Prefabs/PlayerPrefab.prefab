@@ -195,6 +195,7 @@ GameObject:
   - component: {fileID: 9164434269245069330}
   - component: {fileID: 7227618100133344403}
   - component: {fileID: -756737072744751155}
+  - component: {fileID: -3997039271615877872}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -367,3 +368,18 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 12f954e600e6d51438f6ec1abed028aa, type: 3}
   - {fileID: 21300000, guid: 38913b8d106eaa442b4ec20aed04fdc7, type: 3}
   walkSpeed: 0.1
+--- !u!114 &-3997039271615877872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9164434269245069329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d39e7eca067ec31438a42581698d4b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Torch: 0
+  Key: 0
+  TorchLight: {fileID: 1832341622125717335, guid: fb59148411e4c284b95c8b39fd616195, type: 3}
