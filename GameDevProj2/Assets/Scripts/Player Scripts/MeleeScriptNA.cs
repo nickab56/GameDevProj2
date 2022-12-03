@@ -28,7 +28,7 @@ public class MeleeScriptNA : MonoBehaviour
             StartCoroutine(CoolDownTime());
             StartCoroutine(HitTime());
 
-            Instantiate(Weapon);
+            //Instantiate(Weapon);
         }
     }
 

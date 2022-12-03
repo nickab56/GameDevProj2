@@ -26,6 +26,7 @@ public class Weapon : MonoBehaviour
             GameObject go = Instantiate(bullet);
             go.transform.position = shootPoint.transform.position;
             go.transform.rotation = shootPoint.transform.rotation;
+            go.transform.Rotate(0f, 0f, 90f);
             TorchSwing b = go.GetComponent<TorchSwing>();
             b.speed = 10;
             StartCoroutine(CoolDown());
