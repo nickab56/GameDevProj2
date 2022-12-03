@@ -15,6 +15,8 @@ public class DungeonGeneration : MonoBehaviour
     public GameObject Room1110;
     public GameObject StartRoom;
     public GameObject EndRoom;
+    public GameObject RoomCorner2;
+    public GameObject Rooomswirl1111;
     
 
 
@@ -28,6 +30,7 @@ public class DungeonGeneration : MonoBehaviour
     private GameObject RoomSeven;
     private GameObject RoomEight;
     private GameObject RoomNine;
+    private int temp = 0;
 
     void Start()
     {
@@ -36,8 +39,13 @@ public class DungeonGeneration : MonoBehaviour
 
         RoomOne = Instantiate(RoomCornerLeft);
         RoomOne.transform.position = new Vector3(-46, 46, 0);
-
-        RoomTwo = Instantiate(Room1111);
+        
+        temp = Random.Range(0, 2);
+        if (temp == 0)
+            RoomTwo = Instantiate(RoomCircle1111);
+        if (temp == 1)
+            RoomTwo = Instantiate(Rooomswirl1111);
+        
         RoomTwo.transform.position = new Vector3(0, 46, 0);
 
         RoomThree = Instantiate(RoomCornerBasic);
@@ -46,7 +54,15 @@ public class DungeonGeneration : MonoBehaviour
         RoomFour = Instantiate(Room1110);
         RoomFour.transform.position = new Vector3(-46, 0, 0);
 
-        RoomFive = Instantiate(Room0101);
+        temp = Random.Range(0, 4);
+        if(temp == 0)
+            RoomFive = Instantiate(Room0101);
+        if (temp == 1)
+            RoomFive = Instantiate(Room1111); 
+        if (temp == 2)
+            RoomFive = Instantiate(RoomCircle1111);
+        if (temp == 3)
+            RoomFive = Instantiate(Rooomswirl1111);
         RoomFive.transform.position = Vector3.zero;
 
         RoomSix = Instantiate(RoomBroken1011);
@@ -55,7 +71,14 @@ public class DungeonGeneration : MonoBehaviour
         RoomSeven = Instantiate(RoomBottomLeftCorner);
         RoomSeven.transform.position = new Vector3(-46, -46, 0);
 
-        RoomEight = Instantiate(RoomCircle1111);
+        temp = Random.Range(0, 3);
+        if (temp == 0)
+            RoomEight = Instantiate(Room1111);
+        if (temp == 1)
+            RoomEight = Instantiate(RoomCircle1111);
+        if (temp == 2)
+            RoomEight = Instantiate(Rooomswirl1111);
+        
         RoomEight.transform.position = new Vector3(0, -46, 0);
 
         RoomNine = Instantiate(RoomBottomRightCorner);
