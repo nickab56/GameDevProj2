@@ -9,12 +9,12 @@ public class Weapon : MonoBehaviour
 
     private bool inCoolDown = false;
 
-    private AudioSource Blaster;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        Blaster = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -22,8 +22,6 @@ public class Weapon : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && !inCoolDown)
         {
-            if (!Blaster.isPlaying)
-                Blaster.PlayOneShot(Blaster.clip, 0.5f);
             inCoolDown = true;
             GameObject go = Instantiate(bullet);
             go.transform.position = shootPoint.transform.position;
