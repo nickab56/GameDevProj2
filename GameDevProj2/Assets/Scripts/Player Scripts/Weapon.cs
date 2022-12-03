@@ -24,12 +24,13 @@ public class Weapon : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && !inCoolDown)
         {
             inCoolDown = true;
-            GameObject go = Instantiate(bullet);
+            GameObject go = Instantiate(bullet,transform);
             go.transform.position = shootPoint.transform.position;
             go.transform.rotation = shootPoint.transform.rotation;
             go.transform.Rotate(0f, 0f, 90f);
             TorchSwing b = go.GetComponent<TorchSwing>();
             b.speed = speed;
+            
             StartCoroutine(CoolDown());
         }
     }
