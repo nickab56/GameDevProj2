@@ -438,6 +438,8 @@ MonoBehaviour:
   RoomCircle1111: {fileID: 2221298902904768377, guid: 1e49858f59641d4479b91bb8feb0c65d, type: 3}
   RoomBroken1011: {fileID: 7216031799991719468, guid: b9d90a3f76833b74a8b2de3562bb0cc5, type: 3}
   Room1110: {fileID: 3079047807363077741, guid: 39a4740703415914ea7208c6039467b1, type: 3}
+  StartRoom: {fileID: 4037978769356698002, guid: 7ad45dade1e48154ca625b114b12a55a, type: 3}
+  EndRoom: {fileID: 8511134614828161187, guid: bb332c6fcae14804290c5836290f483a, type: 3}
 --- !u!4 &1981250756
 Transform:
   m_ObjectHideFlags: 0

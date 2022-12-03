@@ -82,5 +82,14 @@ public class AI : MonoBehaviour
         //var dist = Vector3.Distance(target.position, enemy.position);
         return false;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject gameObject = collision.gameObject;
+        if (gameObject.tag == "Player")
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
+        }
+    }
 }
 
