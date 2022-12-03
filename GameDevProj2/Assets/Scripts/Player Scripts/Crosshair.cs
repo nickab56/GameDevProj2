@@ -24,6 +24,7 @@ public class Crosshair : MonoBehaviour
     public GameObject Player;
     public PlayerInventory PlayerInventory;
 
+    TorchAnimation script; //creates that script data type
 
     // Start is called before the first frame update
     void Start()
@@ -79,6 +80,50 @@ public class Crosshair : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        if (gameObject.tag == "SkullTorch")
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+
+                script = gameObject.GetComponent<TorchAnimation>();
+
+                script.enabled = true;
+
+                gameObject.GetComponentInChildren<Light>().enabled = true;
+
+            }
+        }
+
+        if (gameObject.tag == "HeartTorch")
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+
+                script = gameObject.GetComponent<TorchAnimation>();
+
+                script.enabled = true;
+
+                gameObject.GetComponentInChildren<Light>().enabled = true;
+
+            }
+        }
+
+        if (gameObject.tag == "SwordTorch")
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+
+                script = gameObject.GetComponent<TorchAnimation>();
+
+                script.enabled = true;
+
+                gameObject.GetComponentInChildren<Light>().enabled = true;
+
+            }
+        }
+
+
     }
 
 }
