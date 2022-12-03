@@ -33,15 +33,15 @@ public class MeleeScriptNA : MonoBehaviour
     }
 
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        GameObject gameObject = collision.gameObject;
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    GameObject gameObject = collision.gameObject;
 
-        if (gameObject.tag == "Enemy" && hitting == true)
-        {
-            Destroy(gameObject);
-        }
-    }
+    //    if (gameObject.tag == "Enemy" && hitting == true)
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
 
     IEnumerator CoolDownTime()
     {
