@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour
 {
     public GameObject bullet;
     public GameObject shootPoint;
+    public int speed =3;
 
     private bool inCoolDown = false;
 
@@ -26,8 +27,9 @@ public class Weapon : MonoBehaviour
             GameObject go = Instantiate(bullet);
             go.transform.position = shootPoint.transform.position;
             go.transform.rotation = shootPoint.transform.rotation;
+            go.transform.Rotate(0f, 0f, 90f);
             TorchSwing b = go.GetComponent<TorchSwing>();
-            b.speed = 10;
+            b.speed = speed;
             StartCoroutine(CoolDown());
         }
     }

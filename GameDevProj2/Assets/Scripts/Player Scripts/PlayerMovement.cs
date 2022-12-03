@@ -49,11 +49,11 @@ public class PlayerMovement : MonoBehaviour
             localSpeed += speed;
             //WalkEffect();
             //WalkTrail();
-            if (isFacingLeft)
-            {
-                Player.transform.Rotate(0.0f, 180.0f, 0.0f);
-                isFacingLeft = false;
-            }
+            //if (isFacingLeft)
+            //{
+            //    Player.transform.Rotate(0.0f, 180.0f, 0.0f);
+            //    isFacingLeft = false;
+            //}
         }
 
 
@@ -72,11 +72,11 @@ public class PlayerMovement : MonoBehaviour
             localSpeed += speed;
             //WalkEffect();
             // WalkTrail();
-            if (!isFacingLeft)
-            {
-                Player.transform.Rotate(0.0f, 180.0f, 0.0f);
-                isFacingLeft = true;
-            }
+            //if (!isFacingLeft)
+            //{
+            //    Player.transform.Rotate(0.0f, 180.0f, 0.0f);
+            //    isFacingLeft = true;
+            //}
         }
 
         if (direction != Vector2.zero)
