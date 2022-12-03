@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 5088776679274760331}
   m_Layer: 0
   m_Name: PlayerPrefab
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -402,6 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 7289356673960086562, guid: c2c46bcb116552a46a0d5d5907b960b5, type: 3}
   shootPoint: {fileID: 5393663474865751054}
+  speed: 3
 --- !u!114 &5088776679274760331
 MonoBehaviour:
   m_ObjectHideFlags: 0
