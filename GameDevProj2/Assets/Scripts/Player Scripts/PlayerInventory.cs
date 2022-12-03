@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerInventory : MonoBehaviour
 {
     public bool Torch = false;
     public bool Key = false;
     public bool Torchbool = false;
+    public bool Scroll = false;
     public Light TorchLight;
+
+    public TMP_Text ScrollText;
+    public TMP_Text PickupText;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +29,11 @@ public class PlayerInventory : MonoBehaviour
 
         //    Torchbool = true;
         //}
+
+        if (Scroll)
+        {
+            ScrollText.text = "Riddle";
+        }
     }
 
 }

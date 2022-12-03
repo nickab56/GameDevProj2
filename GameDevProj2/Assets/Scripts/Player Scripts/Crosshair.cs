@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.GameCenter;
+using TMPro;
+using UnityEngine.UI;
 
 public class Crosshair : MonoBehaviour
 {
@@ -21,7 +23,6 @@ public class Crosshair : MonoBehaviour
 
     public GameObject Player;
     public PlayerInventory PlayerInventory;
-
 
 
     // Start is called before the first frame update
@@ -65,6 +66,16 @@ public class Crosshair : MonoBehaviour
             {
                 PlayerInventory = Player.GetComponent<PlayerInventory>();
                 PlayerInventory.Torch = true;
+                Destroy(gameObject);
+            }
+        }
+
+        if (gameObject.tag == "Scroll")
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                PlayerInventory = Player.GetComponent<PlayerInventory>();
+                PlayerInventory.Scroll = true;
                 Destroy(gameObject);
             }
         }
