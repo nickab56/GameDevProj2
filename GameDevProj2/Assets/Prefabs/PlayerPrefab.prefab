@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3279336430918142387}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.019, y: 0.139, z: 0}
+  m_LocalPosition: {x: -0.019, y: 0.113, z: 1}
   m_LocalScale: {x: 0.06937023, y: 0.06937023, z: 0.06937023}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -100,13 +100,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0}
   target: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 9164434269245069329}
   center: {fileID: 9164434269245069342}
   axis: {x: 0, y: 1, z: 0}
   desiredPosition: {x: 0, y: 0, z: 0}
-  radius: 0
+  radius: 5
   radiusSpeed: 0.5
   rotationSpeed: 5
+  Player: {fileID: 9164434269245069329}
+  PlayerInventory: {fileID: 0}
 --- !u!60 &3578475621362378422
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -117,7 +119,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -132,10 +134,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.000000016763806, y: 0.38749376}
-      - {x: -0.7444354, y: 0.04583023}
-      - {x: -0.015277214, y: -0.37221596}
-      - {x: 0.71388113, y: 0.015277764}
+    - - {x: 0.01081291, y: 0.66862845}
+      - {x: -0.9390669, y: 0.0025780238}
+      - {x: 0.006348476, y: -0.61010164}
+      - {x: 0.98420274, y: 0.0044654645}
 --- !u!1 &5393663474865751054
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +164,7 @@ Transform:
   m_GameObject: {fileID: 5393663474865751054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.054245, y: 0.054245, z: 0.054245}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9164434269245069342}
@@ -181,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0}
-  target: {fileID: 1013789243532893958}
+  target: {fileID: 0}
 --- !u!1 &9164434269245069329
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +201,6 @@ GameObject:
   - component: {fileID: -756737072744751155}
   - component: {fileID: -3997039271615877872}
   - component: {fileID: 8024610606907256098}
-  - component: {fileID: 5088776679274760331}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -402,18 +403,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 7289356673960086562, guid: c2c46bcb116552a46a0d5d5907b960b5, type: 3}
   shootPoint: {fileID: 5393663474865751054}
---- !u!114 &5088776679274760331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9164434269245069329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0539be95bce43f244bd700a9168b5a58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitting: 0
-  inCoolDown: 0
-  Weapon: {fileID: 7289356673960086562, guid: c2c46bcb116552a46a0d5d5907b960b5, type: 3}
+  speed: 3

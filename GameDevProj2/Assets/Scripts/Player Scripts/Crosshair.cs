@@ -19,6 +19,11 @@ public class Crosshair : MonoBehaviour
     public float radiusSpeed = 0.5f;
     public float rotationSpeed = 80.0f;
 
+    public GameObject Player;
+    public PlayerInventory PlayerInventory;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +44,30 @@ public class Crosshair : MonoBehaviour
 
         transform.position = player.transform.position + cursorVector;
 
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        GameObject gameObject = collision.gameObject;
+
+        if (gameObject.tag == "KeyPickUp")
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                PlayerInventory = Player.GetComponent<PlayerInventory>();
+                PlayerInventory.Key = true;
+                Destroy(gameObject);
+            }
+        }
+        if (gameObject.tag == "TorchPickUp")
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                PlayerInventory = Player.GetComponent<PlayerInventory>();
+                PlayerInventory.Torch = true;
+                Destroy(gameObject);
+            }
+        }
     }
 
 }

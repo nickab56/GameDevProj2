@@ -18,12 +18,12 @@ public class PlayerInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Torch == true && Torchbool == false)
-        {
-            Instantiate(TorchLight,transform);
+        //if (Torch == true && Torchbool == false)
+        //{
+        //    Instantiate(TorchLight,transform);
 
-            Torchbool = true;
-        }
+        //    Torchbool = true;
+        //}
     }
 
 }
