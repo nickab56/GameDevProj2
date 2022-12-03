@@ -31,7 +31,7 @@ public class Crosshair : MonoBehaviour
     {
         
 
-        Vector3 playerToCursor = Camera.main.ScreenToWorldPoint(Input.mousePosition) - player.transform.position;
+        Vector3 playerToCursor = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
         Vector3 dir = playerToCursor.normalized;
 
