@@ -19,10 +19,8 @@ public class RotationSP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // * Use this to have something rotate towards a target. Would be good for the boss.
-        direction = target.position - transform.position;
 
-        //direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed);

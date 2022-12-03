@@ -13,7 +13,7 @@ public class TorchSwing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        retreat();
+        StartCoroutine(retreat());
         //direction = new Vector2(1, 0);
         Destroy(this.gameObject, 3);
     }
