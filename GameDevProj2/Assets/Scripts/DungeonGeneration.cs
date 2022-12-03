@@ -13,6 +13,8 @@ public class DungeonGeneration : MonoBehaviour
     public GameObject RoomCircle1111;
     public GameObject RoomBroken1011;
     public GameObject Room1110;
+    public GameObject StartRoom;
+    public GameObject EndRoom;
     
 
 
@@ -29,7 +31,9 @@ public class DungeonGeneration : MonoBehaviour
 
     void Start()
     {
-        
+        StartRoom = Instantiate(StartRoom);
+        StartRoom.transform.position = new Vector3(0, -92, 0);
+
         RoomOne = Instantiate(RoomCornerLeft);
         RoomOne.transform.position = new Vector3(-46, 46, 0);
 
@@ -57,7 +61,10 @@ public class DungeonGeneration : MonoBehaviour
         RoomNine = Instantiate(RoomBottomRightCorner);
         RoomNine.transform.position = new Vector3(46, -46, 0);
 
-      
+        EndRoom = Instantiate(EndRoom);
+        EndRoom.transform.position = new Vector3(0, 92, 0);
+
+
 
     }
 }
