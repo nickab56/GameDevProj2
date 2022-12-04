@@ -17,6 +17,7 @@ public class DungeonGeneration : MonoBehaviour
     public GameObject EndRoom;
     public GameObject RoomCorner2;
     public GameObject Rooomswirl1111;
+    public GameObject BlankRoom;
     
 
 
@@ -87,7 +88,26 @@ public class DungeonGeneration : MonoBehaviour
         EndRoom = Instantiate(EndRoom);
         EndRoom.transform.position = new Vector3(0, 92, 0);
 
-
+        BlankRoom = Instantiate(BlankRoom);
+        BlankRoom.transform.position = new Vector3(46, 92, 0);
+        BlankRoom = Instantiate(BlankRoom);
+        BlankRoom.transform.position = new Vector3(-46, 92, 0);
+        BlankRoom = Instantiate(BlankRoom);
+        BlankRoom.transform.position = new Vector3(46, -92, 0);
+        BlankRoom = Instantiate(BlankRoom);
+        BlankRoom.transform.position = new Vector3(-46, -92, 0);
+        BlankRoom = Instantiate(BlankRoom);
+        BlankRoom.transform.position = new Vector3(92, 46, 0);
+        BlankRoom = Instantiate(BlankRoom);
+        BlankRoom.transform.position = new Vector3(92, 0, 0);
+        BlankRoom = Instantiate(BlankRoom);
+        BlankRoom.transform.position = new Vector3(92, -46, 0);
+        BlankRoom = Instantiate(BlankRoom);
+        BlankRoom.transform.position = new Vector3(-92, 46, 0);
+        BlankRoom = Instantiate(BlankRoom);
+        BlankRoom.transform.position = new Vector3(-92, 0, 0);
+        BlankRoom = Instantiate(BlankRoom);
+        BlankRoom.transform.position = new Vector3(-92, -46, 0);
 
     }
 }
