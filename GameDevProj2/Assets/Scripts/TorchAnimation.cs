@@ -18,6 +18,12 @@ public class TorchAnimation : MonoBehaviour
         StartCoroutine(PlayAnimation());
     }
 
+    private void OnEnable()
+    {
+        renderer = this.GetComponent<SpriteRenderer>();
+        StartCoroutine(PlayAnimation());
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -30,5 +36,12 @@ public class TorchAnimation : MonoBehaviour
         currentSprite = (currentSprite + 1) % torchFrames.Length;
         yield return new WaitForSeconds(flameSpeed);
         StartCoroutine(PlayAnimation());
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+        renderer.sprite = torchFrames[0];
+        currentSprite = 0;
     }
 }
