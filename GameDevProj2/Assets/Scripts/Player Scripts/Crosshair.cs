@@ -11,6 +11,8 @@ public class Crosshair : MonoBehaviour
     public Transform target;
     public GameObject player;
 
+    public GameObject doorOpen;
+
     private float angle;
     private float speed = 5f;
 
@@ -120,6 +122,21 @@ public class Crosshair : MonoBehaviour
 
                 gameObject.GetComponentInChildren<Light>().enabled = true;
 
+            }
+        }
+
+        if (gameObject.tag == "Door")
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                PlayerInventory = Player.GetComponent<PlayerInventory>();
+                if (PlayerInventory.Key == true)
+                {
+                    doorOpen = Instantiate(doorOpen);
+                    doorOpen.transform.position = gameObject.transform.position;
+                    Destroy(gameObject);
+                }
+                
             }
         }
 
