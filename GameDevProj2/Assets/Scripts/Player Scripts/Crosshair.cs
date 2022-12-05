@@ -152,6 +152,9 @@ public class Crosshair : MonoBehaviour
 
                 gameObject.GetComponentInChildren<Light>().enabled = true;
 
+                gameObject.GetComponent<SpriteRenderer>().enabled = true;
+
+
             }
         }
 
