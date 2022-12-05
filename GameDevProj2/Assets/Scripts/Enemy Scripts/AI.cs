@@ -30,12 +30,9 @@ public class AI : MonoBehaviour
     Vector2 ProcessAI()
     {
         Vector3 dir = player.transform.position - this.transform.position;
-        Vector2 returnDir = Vector2.zero;
+        //Vector2 returnDir = Vector2.zero;
         // Function that checks if player is within enemy sites
-        if (IsPlayerInView())
-        {
-            aiType = AIType.attack;
-        } 
+        Vector2 returnDir = CheckPlayerView();
         switch (aiType)
         {
             case AIType.none:
@@ -66,21 +63,26 @@ public class AI : MonoBehaviour
         return temp;
     }
 
-    private bool IsPlayerInView()
+    private Vector2 CheckPlayerView()
     {
-        Debug.Log("Player: " + player.transform.forward);
-        Debug.Log("Enemy: " + this.transform.forward);
         Vector3 targetDir = player.transform.position - this.transform.position;
         Vector3 up = this.transform.up;
+
         float angle = Vector3.Angle(targetDir, up);
-        Debug.Log("Angle: " + angle);
+        float dist = Vector3.Distance(this.transform.position, player.transform.position);
+
+        //Debug.Log("Angle: " + angle);
         if (angle < viewAngle)
         {
-            Debug.Log("YOU ARE WITHIN VIEW");
-            return true;
+            aiType = AIType.attack;
         }
-        //var dist = Vector3.Distance(target.position, enemy.position);
-        return false;
+        
+        if (aiType == AIType.attack && dist > 5.0f)
+        {
+            aiType = AIType.waypoints;
+            return waypoints.findClosestWaypoint();
+        }
+        return Vector2.zero;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
