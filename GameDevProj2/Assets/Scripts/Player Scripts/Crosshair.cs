@@ -141,6 +141,21 @@ public class Crosshair : MonoBehaviour
         }
 
 
+        if (gameObject.tag == "MainTorch")
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+
+                script = gameObject.GetComponent<TorchAnimation>();
+
+                script.enabled = true;
+
+                gameObject.GetComponentInChildren<Light>().enabled = true;
+
+            }
+        }
+
+
     }
 
 }
