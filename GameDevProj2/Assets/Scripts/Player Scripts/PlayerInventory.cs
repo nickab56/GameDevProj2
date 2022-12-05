@@ -10,18 +10,22 @@ public class PlayerInventory : MonoBehaviour
     public bool Torchbool = false;
     public bool Scroll = false;
     public Light TorchLight;
+    public bool ScrollSpawn = false;
 
     public TMP_Text ScrollText;
     public TMP_Text PickupText;
     public Crosshair PlayerCrosshair;
     public GameObject Player;
+    public GameObject TextScrollClone;
+    public GameObject TextScroll;
+
+    private int i = 0;
 
     PlayerMovement script;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -39,15 +43,42 @@ public class PlayerInventory : MonoBehaviour
             script = Player.GetComponent<PlayerMovement>();
             script.enabled = false;
             PlayerCrosshair.enabled = false;
+            
+
+
+            //Vector2 spawnPos = Camera.main.ViewportToWorldPoint(new Vector2(0.5f, 0.5f));
+            if (i == 0)
+            {
+                Instantiate(TextScroll);
+                TextScroll.transform.position = Player.transform.position;
+                TextScrollClone = GameObject.FindWithTag("TextScroll");
+                TextScrollClone.GetComponentInChildren<Canvas>().GetComponentInChildren<TMP_Text>().text = "Three torches must be lit to pass deeper into the dungeon\r\nBut only the wise may do so\r\nProve your prudence and answer this riddle\r\n";
+                i++;
+            }
+            if (i == 1 && Input.GetKeyDown(KeyCode.D))
+            {
+                TextScrollClone.GetComponentInChildren<Canvas>().GetComponentInChildren<TMP_Text>().text = "To be or not to be is the question\r\nBut with me, my owner is no longer being\r\nFor I am wholly absent of flesh\r\nAnd I lack that which I once protected\r\n";
+                i++;
+            }
+            else if (i == 2 && Input.GetKeyDown(KeyCode.D))
+            {
+                TextScrollClone.GetComponentInChildren<Canvas>().GetComponentInChildren<TMP_Text>().text = "I beat more than I'm beaten,\r\nThough I have been known to break.\r\nI can be made of gold or stone,\r\nYet still get sick and ache.\r\n";
+                i++;
+            }
+            else if (i == 3 && Input.GetKeyDown(KeyCode.D))
+            {
+                TextScrollClone.GetComponentInChildren<Canvas>().GetComponentInChildren<TMP_Text>().text = "They say the pen is mightier than me\r\nBut do not believe such jest\r\nFor I cut deeper than fools’ words\r\nAnd I can draw just the same\r\n";
+                i++;
+            }
         }
 
         if (Scroll && Input.GetKey(KeyCode.X))
         {
-            Time.timeScale++;
             Scroll = false;
             script.enabled = true;
             PlayerCrosshair.enabled = true;
-
+            Destroy(TextScrollClone);
+            i = 0;
         }
     }
 

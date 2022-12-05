@@ -391,10 +391,12 @@ MonoBehaviour:
   Torchbool: 0
   Scroll: 0
   TorchLight: {fileID: 1832341622125717335, guid: fb59148411e4c284b95c8b39fd616195, type: 3}
+  ScrollSpawn: 0
   ScrollText: {fileID: 0}
   PickupText: {fileID: 0}
   PlayerCrosshair: {fileID: 2146927144345313999}
   Player: {fileID: 0}
+  TextScroll: {fileID: 1995695310613756243, guid: 0d273aaccf26e4341bdf8c721f43d03a, type: 3}
 --- !u!114 &8024610606907256098
 MonoBehaviour:
   m_ObjectHideFlags: 0
