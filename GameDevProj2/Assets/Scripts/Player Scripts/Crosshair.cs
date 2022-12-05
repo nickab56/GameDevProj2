@@ -77,7 +77,7 @@ public class Crosshair : MonoBehaviour
             {
                 PlayerInventory = Player.GetComponent<PlayerInventory>();
                 PlayerInventory.Scroll = true;
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
         }
 
