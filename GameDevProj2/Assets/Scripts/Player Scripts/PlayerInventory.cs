@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEditor.U2D.Animation;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -51,6 +52,8 @@ public class PlayerInventory : MonoBehaviour
             {
                 Instantiate(TextScroll);
                 TextScroll.transform.position = Player.transform.position;
+                TextScroll.transform.position = Camera.main.ViewportToWorldPoint(new Vector3(.5f, .5f, -1f));
+                TextScroll.transform.position = new Vector3(TextScroll.transform.position.x, TextScroll.transform.position.y, -1f);
                 TextScrollClone = GameObject.FindWithTag("TextScroll");
                 TextScrollClone.GetComponentInChildren<Canvas>().GetComponentInChildren<TMP_Text>().text = "Three torches must be lit to pass deeper into the dungeon\r\nBut only the wise may do so\r\nProve your prudence and answer this riddle\r\n";
                 i++;
