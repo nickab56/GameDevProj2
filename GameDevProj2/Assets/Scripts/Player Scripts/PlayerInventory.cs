@@ -13,6 +13,7 @@ public class PlayerInventory : MonoBehaviour
 
     public TMP_Text ScrollText;
     public TMP_Text PickupText;
+    public Crosshair PlayerCrosshair;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +33,16 @@ public class PlayerInventory : MonoBehaviour
 
         if (Scroll)
         {
-            ScrollText.text = "Riddle";
+            Time.timeScale = 0;
+            PlayerCrosshair.enabled = false;
+        }
+
+        if (Scroll && Input.GetKey(KeyCode.X))
+        {
+            Time.timeScale++;
+            Scroll = false;
+            PlayerCrosshair.enabled = true;
+
         }
     }
 

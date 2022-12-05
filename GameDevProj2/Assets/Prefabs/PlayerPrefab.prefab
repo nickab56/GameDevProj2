@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: -756737072744751155}
   - component: {fileID: -3997039271615877872}
   - component: {fileID: 8024610606907256098}
+  - component: {fileID: 5088776679274760331}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -388,7 +389,11 @@ MonoBehaviour:
   Torch: 0
   Key: 0
   Torchbool: 0
+  Scroll: 0
   TorchLight: {fileID: 1832341622125717335, guid: fb59148411e4c284b95c8b39fd616195, type: 3}
+  ScrollText: {fileID: 0}
+  PickupText: {fileID: 0}
+  PlayerCrosshair: {fileID: 2146927144345313999}
 --- !u!114 &8024610606907256098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,6 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 7289356673960086562, guid: c2c46bcb116552a46a0d5d5907b960b5, type: 3}
   shootPoint: {fileID: 5393663474865751054}
+  speed: 3
 --- !u!114 &5088776679274760331
 MonoBehaviour:
   m_ObjectHideFlags: 0
