@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1578696310905649667}
   - component: {fileID: 5478882590767234354}
-  - component: {fileID: 5496571410919032122}
   - component: {fileID: 8454330862692195221}
   - component: {fileID: 2135062105701702007}
   m_Layer: 0
@@ -87,28 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5496571410919032122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3268027447769989833}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f14f62def6dc9747862e94a46d388cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  torchFrames:
-  - {fileID: 21300000, guid: c349c52e536b0af46b43a5d07bc714dc, type: 3}
-  - {fileID: 21300000, guid: 968c67b9cb7ff5c499add41526dd7fc4, type: 3}
-  - {fileID: 21300000, guid: ae7bbf0e590013c4286e93876e549c97, type: 3}
-  - {fileID: 21300000, guid: 384f646d2fb8cad4b9b417739fea60d9, type: 3}
-  - {fileID: 21300000, guid: 64655c775bdd8e54bace21121fcd7180, type: 3}
-  - {fileID: 21300000, guid: e8d173e8800b71e4dbbe55a05b797239, type: 3}
-  - {fileID: 21300000, guid: 2ecad12dca2b4e348a71f1fba46f4bd0, type: 3}
-  - {fileID: 21300000, guid: f736b25740bf10d40b5f614aa4240072, type: 3}
-  flameSpeed: 0.2
 --- !u!61 &8454330862692195221
 BoxCollider2D:
   m_ObjectHideFlags: 0
