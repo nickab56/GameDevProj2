@@ -19,6 +19,7 @@ TagManager:
   - Door
   - MainTorch
   - PuzzleDoor
+  - Treasure
   layers:
   - Default
   - TransparentFX
