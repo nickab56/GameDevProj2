@@ -224,6 +224,8 @@ MonoBehaviour:
   STVal: 1
   HTVal: 2
   SWVal: 3
+  PuzzleDoor: {fileID: 0}
+  doorOpen: {fileID: 4533007818394203879, guid: 362974be1a1f10445ae72250de9f623a, type: 3}
 --- !u!1 &316168067 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9164434269245069329, guid: 927f76e0501ec2f4291ff5fe70a8a2c1, type: 3}

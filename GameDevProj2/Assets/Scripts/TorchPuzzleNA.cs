@@ -23,6 +23,9 @@ public class TorchPuzzleNA : MonoBehaviour
     private int[] Answer = new int[3];
     private int numActiveLights = 0;
 
+    public GameObject PuzzleDoor;
+    public GameObject doorOpen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,7 +67,11 @@ public class TorchPuzzleNA : MonoBehaviour
         {
             if (CheckPuzzle())
             {
-                // OPEN DOOR AND DO MAGIC
+                PuzzleDoor = GameObject.FindGameObjectWithTag("PuzzleDoor");
+                doorOpen = Instantiate(doorOpen);
+                doorOpen.transform.position = PuzzleDoor.transform.position;
+                Destroy(PuzzleDoor);
+                numActiveLights = 0;
             }
             else
             {

@@ -18,6 +18,7 @@ TagManager:
   - ScrollTxt
   - Door
   - MainTorch
+  - PuzzleDoor
   layers:
   - Default
   - TransparentFX
