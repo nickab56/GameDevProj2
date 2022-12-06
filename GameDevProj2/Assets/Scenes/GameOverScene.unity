@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7cfca85a3e75f4596e9b59ed0a2083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensityRange: 0.25
+  intensityRange: 0.8
 --- !u!108 &1537526891
 Light:
   m_ObjectHideFlags: 0
