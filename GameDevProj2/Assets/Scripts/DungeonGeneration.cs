@@ -18,6 +18,7 @@ public class DungeonGeneration : MonoBehaviour
     public GameObject RoomCorner2;
     public GameObject Rooomswirl1111;
     public GameObject BlankRoom;
+    public GameObject Key;
     
 
 
@@ -149,5 +150,17 @@ public class DungeonGeneration : MonoBehaviour
         BlankRoom = Instantiate(BlankRoom);
         BlankRoom.transform.position = new Vector3(-92, -46, 0);
 
+        Key = Instantiate(Key);
+        temp = Random.Range(0, 5);
+        if (temp == 0)
+            Key.transform.position = new Vector3(46, -23, -1);
+        if (temp == 1)
+            Key.transform.position = new Vector3(23, 46, -1);
+        if (temp == 2)
+            Key.transform.position = new Vector3(-23, 46, -1);
+        if (temp == 3)
+            Key.transform.position = new Vector3(-46, 23, -1);
+        if (temp == 4)
+            Key.transform.position = new Vector3(-23, 0, -1);
     }
 }
