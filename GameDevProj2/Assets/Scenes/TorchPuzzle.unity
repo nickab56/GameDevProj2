@@ -284,6 +284,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room1110
       objectReference: {fileID: 0}
+    - target: {fileID: 3232424735497930272, guid: 39a4740703415914ea7208c6039467b1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3815576273021896972, guid: 39a4740703415914ea7208c6039467b1, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
