@@ -16,6 +16,8 @@ TagManager:
   - Scroll
   - TextScroll
   - ScrollTxt
+  - Door
+  - MainTorch
   layers:
   - Default
   - TransparentFX
