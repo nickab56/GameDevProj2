@@ -224,6 +224,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Treasure
       objectReference: {fileID: 0}
+    - target: {fileID: 6458931838291138963, guid: 15c1bf040aba3a343a100d01ac50c793, type: 3}
+      propertyPath: m_TagString
+      value: Treasure
+      objectReference: {fileID: 0}
     - target: {fileID: 9084534400965874370, guid: 15c1bf040aba3a343a100d01ac50c793, type: 3}
       propertyPath: m_RootOrder
       value: 4

@@ -158,6 +158,14 @@ public class Crosshair : MonoBehaviour
             }
         }
 
+        if (gameObject.tag == "Treasure")
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
+            }
+        }
+
 
     }
 
