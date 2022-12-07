@@ -12,7 +12,7 @@ public class Crosshair : MonoBehaviour
     public GameObject player;
 
     public GameObject doorOpen;
-
+    public Renderer crosshairRenderer;
     private float angle;
     private float speed = 5f;
 
@@ -35,6 +35,7 @@ public class Crosshair : MonoBehaviour
     {
         transform.position = (transform.position - center.position).normalized * radius + center.position;
         transform.position.Set(transform.position.x, transform.position.y - .25f, transform.position.z);
+        crosshairRenderer = gameObject.GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -59,6 +60,7 @@ public class Crosshair : MonoBehaviour
         if (gameObject.tag == "KeyPickUp")
         {
             this.transform.localScale = new Vector3(0.12f,0.12f,0);
+            crosshairRenderer.material.color = new Color(1, 0.92f, 0.016f, 1);
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 PlayerInventory = Player.GetComponent<PlayerInventory>();
@@ -69,6 +71,8 @@ public class Crosshair : MonoBehaviour
         }
         if (gameObject.tag == "TorchPickUp")
         {
+            this.transform.localScale = new Vector3(0.12f, 0.12f, 0);
+            crosshairRenderer.material.color = new Color(1, 0.92f, 0.016f, 1);
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 PlayerInventory = Player.GetComponent<PlayerInventory>();
@@ -79,6 +83,8 @@ public class Crosshair : MonoBehaviour
 
         if (gameObject.tag == "Scroll")
         {
+            this.transform.localScale = new Vector3(0.12f, 0.12f, 0);
+            crosshairRenderer.material.color = new Color(1, 0.92f, 0.016f, 1);
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 PlayerInventory = Player.GetComponent<PlayerInventory>();
@@ -89,6 +95,8 @@ public class Crosshair : MonoBehaviour
 
         if (gameObject.tag == "SkullTorch")
         {
+            this.transform.localScale = new Vector3(0.12f, 0.12f, 0);
+            crosshairRenderer.material.color = new Color(1, 0.92f, 0.016f, 1);
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
 
@@ -103,6 +111,8 @@ public class Crosshair : MonoBehaviour
 
         if (gameObject.tag == "HeartTorch")
         {
+            this.transform.localScale = new Vector3(0.12f, 0.12f, 0);
+            crosshairRenderer.material.color = new Color(1, 0.92f, 0.016f, 1);
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
 
@@ -117,6 +127,8 @@ public class Crosshair : MonoBehaviour
 
         if (gameObject.tag == "SwordTorch")
         {
+            this.transform.localScale = new Vector3(0.12f, 0.12f, 0);
+            crosshairRenderer.material.color = new Color(1, 0.92f, 0.016f, 1);
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
 
@@ -131,6 +143,8 @@ public class Crosshair : MonoBehaviour
 
         if (gameObject.tag == "Door")
         {
+            this.transform.localScale = new Vector3(0.12f, 0.12f, 0);
+            crosshairRenderer.material.color = new Color(1, 0.92f, 0.016f, 1);
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 PlayerInventory = Player.GetComponent<PlayerInventory>();
@@ -147,6 +161,8 @@ public class Crosshair : MonoBehaviour
 
         if (gameObject.tag == "MainTorch")
         {
+            this.transform.localScale = new Vector3(0.12f, 0.12f, 0);
+            crosshairRenderer.material.color = new Color(1, 0.92f, 0.016f, 1);
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
 
@@ -169,15 +185,18 @@ public class Crosshair : MonoBehaviour
 
         if (gameObject.tag == "Treasure")
         {
+            this.transform.localScale = new Vector3(0.12f, 0.12f, 0);
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
             }
         }
         
-        if (gameObject.tag != "KeyPickUp")
+        else
+        //if (gameObject.tag != "KeyPickUp" ^ gameObject.tag != "TorchPickUp" ^ gameObject.tag != "Scroll" ^ gameObject.tag != "SwordTorch" ^ gameObject.tag != "Door" ^ gameObject.tag != "MainTorch" ^ gameObject.tag != "Treasure")
         {
             this.transform.localScale = new Vector3(0.1f, 0.1f, 0);
+            crosshairRenderer.material.color = new Color(1, 1, 1, 1);
         }
     }
 
