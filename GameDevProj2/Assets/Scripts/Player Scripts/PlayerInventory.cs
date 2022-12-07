@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEditor.U2D.Animation;
+using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerInventory : MonoBehaviour
     //public TMP_Text PickupText;
     public Crosshair PlayerCrosshair;
     public GameObject TextScroll;
+    public Image KeyUI;
 
     private GameObject TextScrollClone;
     private int i = 0;
@@ -26,6 +28,7 @@ public class PlayerInventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        KeyUI.enabled = false;
     }
 
     // Update is called once per frame
@@ -44,8 +47,6 @@ public class PlayerInventory : MonoBehaviour
             script.enabled = false;
             PlayerCrosshair.enabled = false;
             
-
-
             //Vector2 spawnPos = Camera.main.ViewportToWorldPoint(new Vector2(0.5f, 0.5f));
             if (i == 0)
             {
@@ -81,6 +82,11 @@ public class PlayerInventory : MonoBehaviour
             PlayerCrosshair.enabled = true;
             Destroy(TextScrollClone);
             i = 0;
+        }
+
+        if (Key)
+        {
+            KeyUI.enabled = true;
         }
     }
 
