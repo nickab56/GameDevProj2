@@ -469,12 +469,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b89d0658ad96e4380e14f7e0dc4f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NoFlame: {fileID: 0}
+  NoFlame: {fileID: 21300000, guid: 2d01abb41044cdd46acd13d29070dfdb, type: 3}
   STVal: 1
   HTVal: 2
   SWVal: 3
   PuzzleDoor: {fileID: 0}
-  doorOpen: {fileID: 0}
+  doorOpen: {fileID: 4533007818394203879, guid: 362974be1a1f10445ae72250de9f623a, type: 3}
 --- !u!1001 &1269863284
 PrefabInstance:
   m_ObjectHideFlags: 0

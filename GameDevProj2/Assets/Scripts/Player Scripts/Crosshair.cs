@@ -54,6 +54,13 @@ public class Crosshair : MonoBehaviour
     }
 
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        this.transform.localScale = new Vector3(0.1f, 0.1f, 0);
+        crosshairRenderer.material.color = new Color(1, 1, 1, 1);
+    }
+
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         GameObject gameObject = collision.gameObject;
@@ -107,6 +114,12 @@ public class Crosshair : MonoBehaviour
 
                 gameObject.GetComponentInChildren<Light>().enabled = true;
 
+                audios = gameObject.GetComponents<AudioSource>();
+
+                audios[0].Play();
+
+                audios[1].Play();
+
             }
         }
 
@@ -123,6 +136,12 @@ public class Crosshair : MonoBehaviour
 
                 gameObject.GetComponentInChildren<Light>().enabled = true;
 
+                audios = gameObject.GetComponents<AudioSource>();
+
+                audios[0].Play();
+
+                audios[1].Play();
+
             }
         }
 
@@ -138,6 +157,12 @@ public class Crosshair : MonoBehaviour
                 script.enabled = true;
 
                 gameObject.GetComponentInChildren<Light>().enabled = true;
+
+                audios = gameObject.GetComponents<AudioSource>();
+
+                audios[0].Play();
+
+                audios[1].Play();
 
             }
         }
@@ -193,12 +218,6 @@ public class Crosshair : MonoBehaviour
             }
         }
         
-        else
-        //if (gameObject.tag != "KeyPickUp" ^ gameObject.tag != "TorchPickUp" ^ gameObject.tag != "Scroll" ^ gameObject.tag != "SwordTorch" ^ gameObject.tag != "Door" ^ gameObject.tag != "MainTorch" ^ gameObject.tag != "Treasure")
-        {
-            this.transform.localScale = new Vector3(0.1f, 0.1f, 0);
-            crosshairRenderer.material.color = new Color(1, 1, 1, 1);
-        }
     }
 
 }
