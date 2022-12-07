@@ -33,6 +33,7 @@ public class DungeonGeneration : MonoBehaviour
     private GameObject RoomEight;
     private GameObject RoomNine;
     private int temp = 0;
+    private int puzzle = 0;
 
     void Start()
     {
@@ -68,54 +69,100 @@ public class DungeonGeneration : MonoBehaviour
             RoomThree = Instantiate(Rooomswirl1111);
         RoomThree.transform.position = new Vector3(46, 46, 0);
 
-        temp = Random.Range(0, 3);
-        if (temp == 0)
+        puzzle = Random.Range(0, 3);
+        if (puzzle == 0)
+        {
             RoomFour = Instantiate(Room1110);
-        if (temp == 1)
-            RoomFour = Instantiate(RoomBottomLeftCorner);
-        if (temp == 2)
-            RoomFour = Instantiate(RoomCircle1111);
-        RoomFour.transform.position = new Vector3(-46, 0, 0);
+            RoomFour.transform.position = new Vector3(-46, 0, 0);
+            temp = Random.Range(0, 3);
+            if (temp == 0)
+                RoomSix = Instantiate(RoomBroken1011);
+            if (temp == 1)
+                RoomSix = Instantiate(RoomCircle1111);
+            if (temp == 2)
+                RoomSix = Instantiate(RoomBroken1011);
+            RoomSix.transform.position = new Vector3(46, 0, 0);
+            temp = Random.Range(0, 3);
+            if (temp == 0)
+                RoomEight = Instantiate(RoomCornerLeft);
+            if (temp == 1)
+                RoomEight = Instantiate(RoomCornerLeft);
+            if (temp == 3)
+                RoomEight = Instantiate(Rooomswirl1111);
+            RoomEight.transform.position = new Vector3(0, -46, 0);
+        }
 
-        temp = Random.Range(0, 3);
-        if(temp == 0)
+        temp = Random.Range(0, 5);
+        if (temp == 0)
             RoomFive = Instantiate(RoomBottomRightCorner);
         if (temp == 1)
-            RoomFive = Instantiate(RoomCircle1111);
+            RoomFive = Instantiate(RoomBottomRightCorner);
         if (temp == 2)
+            RoomFive = Instantiate(RoomBottomRightCorner);
+        if (temp == 3)
+            RoomFive = Instantiate(RoomCircle1111);
+        if (temp == 4)
             RoomFive = Instantiate(Rooomswirl1111);
         RoomFive.transform.position = Vector3.zero;
 
-        temp = Random.Range(0, 4);
-        if (temp == 0)
+        
+        if (puzzle == 1)
+        {
             RoomSix = Instantiate(Room1110);
-        if (temp == 1)
-            RoomSix = Instantiate(RoomBroken1011);
-        if (temp == 2)
-            RoomSix = Instantiate(RoomCircle1111);
-        if (temp == 3)
-            RoomSix = Instantiate(Rooomswirl1111);
-        RoomSix.transform.position = new Vector3(46, 0, 0);
+            RoomSix.transform.position = new Vector3(46, 0, 0);
+            temp = Random.Range(0, 3);
+            if (temp == 0)
+                RoomFour = Instantiate(RoomBottomLeftCorner);
+            if (temp == 1)
+                RoomFour = Instantiate(RoomBottomLeftCorner);
+            if (temp == 2)
+                RoomFour = Instantiate(RoomCircle1111);
+            RoomFour.transform.position = new Vector3(-46, 0, 0);
+            temp = Random.Range(0, 3);
+            if (temp == 0)
+                RoomEight = Instantiate(RoomCornerLeft);
+            if (temp == 1)
+                RoomEight = Instantiate(RoomCornerLeft);
+            if (temp == 2)
+                RoomEight = Instantiate(Rooomswirl1111);
+            RoomEight.transform.position = new Vector3(0, -46, 0);
+        }
 
-        temp = Random.Range(0, 3);
+        temp = Random.Range(0, 5);
         if (temp == 0)
             RoomSeven = Instantiate(Room0101);
         if (temp == 1)
-            RoomSeven = Instantiate(RoomCircle1111);
+            RoomSeven = Instantiate(Room0101);
         if (temp == 2)
+            RoomSeven = Instantiate(Room0101);
+        if (temp == 3)
+            RoomSeven = Instantiate(RoomCircle1111);
+        if (temp == 4)
             RoomSeven = Instantiate(Rooomswirl1111);
         RoomSeven.transform.position = new Vector3(-46, -46, 0);
 
-        temp = Random.Range(0, 4);
-        if (temp == 0)
+        
+        if (puzzle == 2)
+        {
             RoomEight = Instantiate(Room1110);
-        if (temp == 1)
-            RoomEight = Instantiate(RoomCornerLeft);
-        if (temp == 2)
-            RoomEight = Instantiate(RoomCircle1111);
-        if (temp == 3)
-            RoomEight = Instantiate(Rooomswirl1111);
-        RoomEight.transform.position = new Vector3(0, -46, 0);
+            RoomEight.transform.position = new Vector3(0, -46, 0);
+            temp = Random.Range(0, 3);
+            if (temp == 0)
+                RoomFour = Instantiate(RoomBottomLeftCorner);
+            if (temp == 1)
+                RoomFour = Instantiate(RoomBottomLeftCorner);
+            if (temp == 2)
+                RoomFour = Instantiate(RoomCircle1111);
+            RoomFour.transform.position = new Vector3(-46, 0, 0);
+            temp = Random.Range(0, 3);
+            if (temp == 0)
+                RoomSix = Instantiate(RoomBroken1011);
+            if (temp == 1)
+                RoomSix = Instantiate(RoomCircle1111);
+            if (temp == 2)
+                RoomSix = Instantiate(RoomBroken1011);
+            RoomSix.transform.position = new Vector3(46, 0, 0);
+        }
 
         temp = Random.Range(0, 3);
         if (temp == 0)
