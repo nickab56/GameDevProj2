@@ -90,8 +90,15 @@ public class AI : MonoBehaviour
         GameObject gameObject = collision.gameObject;
         if (gameObject.tag == "Player")
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
+            Destroy(gameObject);
+            StartCoroutine(ChangeScene());
         }
+    }
+
+    IEnumerator ChangeScene()
+    {
+        yield return new WaitForSeconds(2f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
     }
 }
 
