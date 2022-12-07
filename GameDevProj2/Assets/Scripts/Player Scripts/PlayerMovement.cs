@@ -13,13 +13,15 @@ public class PlayerMovement : MonoBehaviour
     private float localSpeed = 0;
     public bool walkInCoolDown = false;
 
+    public AudioSource walk;
+
     // Get direction the player is facing (left by default)
     bool isFacingLeft = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -40,6 +42,10 @@ public class PlayerMovement : MonoBehaviour
             localSpeed += speed;
             //WalkEffect();
             //WalkTrail();
+            if (!walk.isPlaying)
+            {
+                walk.PlayOneShot(walk.clip, .25f);
+            }
         }
 
 
@@ -54,6 +60,10 @@ public class PlayerMovement : MonoBehaviour
                 Player.transform.localScale = new Vector3(-Player.transform.localScale.x, Player.transform.localScale.y, Player.transform.localScale.z);
                 isFacingLeft = false;
             }
+            if (!walk.isPlaying)
+            {
+                walk.PlayOneShot(walk.clip, .25f);
+            }
         }
 
 
@@ -64,6 +74,10 @@ public class PlayerMovement : MonoBehaviour
             localSpeed += speed;
             //WalkEffect();
             //WalkTrail();
+            if (!walk.isPlaying)
+            {
+                walk.PlayOneShot(walk.clip, .25f);
+            }
         }
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
@@ -76,6 +90,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 Player.transform.localScale = new Vector3(-Player.transform.localScale.x, Player.transform.localScale.y, Player.transform.localScale.z);
                 isFacingLeft = true;
+            }
+            if (!walk.isPlaying)
+            {
+                walk.PlayOneShot(walk.clip, .25f);
             }
         }
 
