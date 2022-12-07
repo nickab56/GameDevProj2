@@ -26,6 +26,8 @@ public class Crosshair : MonoBehaviour
     public GameObject Player;
     public PlayerInventory PlayerInventory;
 
+    public AudioSource[] audios;
+
     TorchAnimation script; //creates that script data type
 
     // Start is called before the first frame update
@@ -154,6 +156,11 @@ public class Crosshair : MonoBehaviour
 
                 gameObject.GetComponent<SpriteRenderer>().enabled = true;
 
+                audios = gameObject.GetComponents<AudioSource>();
+
+                audios[0].Play();
+
+                audios[1].Play();
 
             }
         }
