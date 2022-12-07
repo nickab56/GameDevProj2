@@ -87,7 +87,7 @@ public class DungeonGeneration : MonoBehaviour
                 RoomEight = Instantiate(RoomCornerLeft);
             if (temp == 1)
                 RoomEight = Instantiate(RoomCornerLeft);
-            if (temp == 3)
+            if (temp == 2)
                 RoomEight = Instantiate(Rooomswirl1111);
             RoomEight.transform.position = new Vector3(0, -46, 0);
         }
