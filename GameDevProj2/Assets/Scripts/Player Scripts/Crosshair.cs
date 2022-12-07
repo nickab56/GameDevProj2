@@ -52,6 +52,7 @@ public class Crosshair : MonoBehaviour
 
     }
 
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         GameObject gameObject = collision.gameObject;
