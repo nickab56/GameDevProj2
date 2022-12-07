@@ -7,6 +7,7 @@ public class MeleeScriptNA : MonoBehaviour
     public bool hitting = false;
     public bool inCoolDown = false;
     public GameObject Weapon;
+    public AudioSource Swing;
 
     private float coolDown = 2f;
     private float hitTime = 1f;
@@ -23,6 +24,10 @@ public class MeleeScriptNA : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && inCoolDown == false)
         {
+            if (!Swing.isPlaying)
+            {
+                Swing.PlayOneShot(Swing.clip, 0.5f);
+            }
             hitting = true;
             inCoolDown = true;
             StartCoroutine(CoolDownTime());
