@@ -8,14 +8,15 @@ public class TorchSwing : MonoBehaviour
     public float speed = 0.1f;
     
     private bool reach = false;
-    private Renderer renderer;
+    new private Renderer renderer;
     private bool isInvisible;
+
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(retreat());
         //direction = new Vector2(1, 0);
-        Destroy(this.gameObject, .55f);
+        Destroy(this.gameObject, .65f);
     }
 
     // Update is called once per frame
@@ -38,20 +39,14 @@ public class TorchSwing : MonoBehaviour
             newPosition = new Vector3(-(speed * transform.up.x) * Time.deltaTime, -(speed * transform.up.y) * Time.deltaTime, 0);
             this.transform.position += newPosition;
         }
-        
-        
-
-
-        
     }
 
     IEnumerator retreat()
     {
         reach = true;
-        yield return new WaitForSeconds(.25f);
+        yield return new WaitForSeconds(.3f);
         reach = false;
-        yield return new WaitForSeconds(.25f);
+        yield return new WaitForSeconds(.3f);
         retreat();
     }
-    
 }

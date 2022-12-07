@@ -948,6 +948,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 3274239057476913165, guid: 18ceb848f7d9d7041acad644d41ad288, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3274239057476913167, guid: 18ceb848f7d9d7041acad644d41ad288, type: 3}
       propertyPath: m_RootOrder
       value: 20

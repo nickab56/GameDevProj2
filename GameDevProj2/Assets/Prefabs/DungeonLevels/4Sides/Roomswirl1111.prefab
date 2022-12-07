@@ -537,6 +537,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2004517730223208678}
     m_Modifications:
     - target: {fileID: 3274239057476913163, guid: 18ceb848f7d9d7041acad644d41ad288, type: 3}
+      propertyPath: waypoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3274239057476913163, guid: 18ceb848f7d9d7041acad644d41ad288, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 2456729565847256407}

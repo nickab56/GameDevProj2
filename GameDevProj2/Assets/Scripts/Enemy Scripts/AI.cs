@@ -8,29 +8,50 @@ public class AI : MonoBehaviour
     public enum AIType { waypoints, attack, none };
     public AIType aiType = AIType.none;
     public float viewAngle = 5.0f;
-    public float speed = 5;
+    public float speed = 3;
 
     private WayPoints waypoints;
+    private EnemyAnimation enemyAnimation;
     private GameObject player;
+
+    // Knockback implementation
+    private Vector2 dir;
+    public float KBCurrent = 0;
+    public float KBTotal = 0.2f;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         waypoints = this.GetComponent<WayPoints>();
+        enemyAnimation = this.GetComponent<EnemyAnimation>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 temp = speed * Time.deltaTime * ProcessAI();
+        Vector2 temp = Vector2.zero;
+        if (KBCurrent <= 0) {
+            // Normal movement 
+            if (player != null)
+            {
+                temp = speed * Time.deltaTime * ProcessAI();
+            }
+        } 
+        else
+        {
+            // Still getting knocked back
+            temp = 1.5f * speed * Time.deltaTime * dir;
+            KBCurrent -= Time.deltaTime;
+        }
+
         transform.position += new Vector3(temp.x, temp.y, 0);
     }
 
     Vector2 ProcessAI()
     {
         Vector3 dir = player.transform.position - this.transform.position;
-        //Vector2 returnDir = Vector2.zero;
+
         // Function that checks if player is within enemy sites
         Vector2 returnDir = CheckPlayerView();
         switch (aiType)
@@ -56,6 +77,7 @@ public class AI : MonoBehaviour
         }
         return returnDir;
     }
+
     private Vector2 VectorTrack(Vector3 rawDirection)
     {
         Vector2 temp = new Vector2(rawDirection.x, rawDirection.y);
@@ -92,7 +114,24 @@ public class AI : MonoBehaviour
         {
             Destroy(gameObject);
             StartCoroutine(ChangeScene());
+        };
+        if (gameObject.tag == "Weapon")
+        {
+            // Knockback
+            dir = (this.transform.position - gameObject.transform.position).normalized;
+            KBCurrent = KBTotal;
+            StartCoroutine(FreezeAnimation());
+
+            // Provoked Enemy, begin attack
+            aiType = AIType.attack;
         }
+    }
+
+    public IEnumerator FreezeAnimation()
+    {
+        enemyAnimation.enabled = false;
+        yield return new WaitForSeconds(KBCurrent);
+        enemyAnimation.enabled = true;
     }
 
     IEnumerator ChangeScene()

@@ -17,6 +17,12 @@ public class EnemyAnimation : MonoBehaviour
         StartCoroutine(PlayAnimation());
     }
 
+    private void OnEnable()
+    {
+        renderer = this.GetComponent<SpriteRenderer>();
+        StartCoroutine(PlayAnimation());
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -29,5 +35,9 @@ public class EnemyAnimation : MonoBehaviour
         currentSprite = (currentSprite + 1) % enemyFrames.Length;
         yield return new WaitForSeconds(walkSpeed);
         StartCoroutine(PlayAnimation());
+    }
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 }
