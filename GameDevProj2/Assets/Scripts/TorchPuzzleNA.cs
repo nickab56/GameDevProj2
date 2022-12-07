@@ -6,10 +6,12 @@ using UnityEngine;
 public class TorchPuzzleNA : MonoBehaviour
 {
     public Sprite NoFlame;
+    public GameObject doorOpen;
 
     private GameObject SkullTorch;
     private GameObject HeartTorch;
     private GameObject SwordTorch;
+    private GameObject PuzzleDoor;
 
     public int STVal = 1;
     public int HTVal = 2;
@@ -23,16 +25,29 @@ public class TorchPuzzleNA : MonoBehaviour
     private int[] Answer = new int[3];
     private int numActiveLights = 0;
 
-    public GameObject PuzzleDoor;
-    public GameObject doorOpen;
-
     // Start is called before the first frame update
     void Start()
     {
         SkullTorch = GameObject.FindGameObjectWithTag("SkullTorch");
+        if (SkullTorch == null)
+        {
+            Debug.Log("SkullTorch not found");
+        }
         HeartTorch = GameObject.FindGameObjectWithTag("HeartTorch");
+        if (HeartTorch == null)
+        {
+            Debug.Log("HeartTorch not found");
+        }
         SwordTorch = GameObject.FindGameObjectWithTag("SwordTorch");
-        // TODO - Error handling
+        if (SwordTorch == null)
+        {
+            Debug.Log("SwordTorch not found");
+        }
+        PuzzleDoor = GameObject.FindGameObjectWithTag("PuzzleDoor");
+        if (PuzzleDoor == null)
+        {
+            Debug.Log("PuzzleDoor not found");
+        }
     }
 
     // Update is called once per frame
@@ -67,7 +82,6 @@ public class TorchPuzzleNA : MonoBehaviour
         {
             if (CheckPuzzle())
             {
-                PuzzleDoor = GameObject.FindGameObjectWithTag("PuzzleDoor");
                 doorOpen = Instantiate(doorOpen);
                 doorOpen.transform.position = PuzzleDoor.transform.position;
                 Destroy(PuzzleDoor);
@@ -80,14 +94,17 @@ public class TorchPuzzleNA : MonoBehaviour
                 SwordTorch.GetComponentInChildren<Light>().enabled = false;
                 SwordTorch.GetComponent<TorchAnimation>().enabled = false;
                 SwordTorch.GetComponent<SpriteRenderer>().sprite = NoFlame;
+                Sword = false;
 
                 SkullTorch.GetComponentInChildren<Light>().enabled = false;
                 SkullTorch.GetComponent<TorchAnimation>().enabled = false;
                 SkullTorch.GetComponent<SpriteRenderer>().sprite = NoFlame;
+                Skull = false;
 
                 HeartTorch.GetComponentInChildren<Light>().enabled = false;
                 HeartTorch.GetComponent<TorchAnimation>().enabled = false;
                 HeartTorch.GetComponent<SpriteRenderer>().sprite = NoFlame;
+                Heart = false;
                 // Possibly a sound effect?
             }
         }

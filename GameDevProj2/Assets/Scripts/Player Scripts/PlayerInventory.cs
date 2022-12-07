@@ -13,13 +13,12 @@ public class PlayerInventory : MonoBehaviour
     public Light TorchLight;
     public bool ScrollSpawn = false;
 
-    public TMP_Text ScrollText;
-    public TMP_Text PickupText;
+    //public TMP_Text ScrollText;
+    //public TMP_Text PickupText;
     public Crosshair PlayerCrosshair;
-    public GameObject Player;
-    public GameObject TextScrollClone;
     public GameObject TextScroll;
 
+    private GameObject TextScrollClone;
     private int i = 0;
 
     PlayerMovement script;
@@ -41,7 +40,7 @@ public class PlayerInventory : MonoBehaviour
 
         if (Scroll)
         {
-            script = Player.GetComponent<PlayerMovement>();
+            script = this.GetComponent<PlayerMovement>();
             script.enabled = false;
             PlayerCrosshair.enabled = false;
             
@@ -51,7 +50,7 @@ public class PlayerInventory : MonoBehaviour
             if (i == 0)
             {
                 Instantiate(TextScroll);
-                TextScroll.transform.position = Player.transform.position;
+                TextScroll.transform.position = this.transform.position;
                 TextScroll.transform.position = Camera.main.ViewportToWorldPoint(new Vector3(.5f, .5f, -1f));
                 TextScroll.transform.position = new Vector3(TextScroll.transform.position.x, TextScroll.transform.position.y, -1f);
                 TextScrollClone = GameObject.FindWithTag("TextScroll");

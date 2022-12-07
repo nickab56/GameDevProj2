@@ -30,7 +30,7 @@ public class WayPoints : MonoBehaviour
         dir = waypoints[currentWaypoint].transform.position - this.transform.position;
         dir.x += dirX;
         dir.y += dirX;
-        Debug.Log("Enemy Direction: " + dir.x + ", " + dir.y);
+
         if (dir.magnitude < 0.01) //enemy has reached the waypoint
         {
             currentWaypoint++;
