@@ -58,11 +58,13 @@ public class Crosshair : MonoBehaviour
 
         if (gameObject.tag == "KeyPickUp")
         {
+            this.transform.localScale = new Vector3(0.12f,0.12f,0);
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 PlayerInventory = Player.GetComponent<PlayerInventory>();
                 PlayerInventory.Key = true;
                 Destroy(gameObject);
+                
             }
         }
         if (gameObject.tag == "TorchPickUp")
@@ -172,8 +174,11 @@ public class Crosshair : MonoBehaviour
                 UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
             }
         }
-
-
+        
+        if (gameObject.tag != "KeyPickUp")
+        {
+            this.transform.localScale = new Vector3(0.1f, 0.1f, 0);
+        }
     }
 
 }

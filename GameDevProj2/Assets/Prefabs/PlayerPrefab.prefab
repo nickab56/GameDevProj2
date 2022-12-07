@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1013789243532893958}
   - component: {fileID: 2341965757217882816}
   - component: {fileID: 2146927144345313999}
-  - component: {fileID: 3578475621362378422}
+  - component: {fileID: 8119570176203363109}
   m_Layer: 0
   m_Name: Crosshair
   m_TagString: Untagged
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3279336430918142387}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.019, y: 0.113, z: 1}
-  m_LocalScale: {x: 0.06937023, y: 0.06937023, z: 0.06937023}
+  m_LocalPosition: {x: -0.0087, y: 0.12221, z: 1}
+  m_LocalScale: {x: 0.10622178, y: 0.11055742, z: 0.06937023}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9164434269245069342}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e421a101be036b04692250827fd16a83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -110,8 +110,9 @@ MonoBehaviour:
   rotationSpeed: 5
   Player: {fileID: 9164434269245069329}
   PlayerInventory: {fileID: 0}
---- !u!60 &3578475621362378422
-PolygonCollider2D:
+  audios: []
+--- !u!58 &8119570176203363109
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -120,25 +121,12 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
-    newSize: {x: 1, y: 0.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.01081294, y: 0.8677152}
-      - {x: -1.0907521, y: 0.0025780424}
-      - {x: 0.0063484535, y: -0.7902276}
-      - {x: 1.1169271, y: 0.0044654477}
+  m_Offset: {x: 0, y: 0.000000029802322}
+  serializedVersion: 2
+  m_Radius: 0.2500001
 --- !u!1 &5393663474865751054
 GameObject:
   m_ObjectHideFlags: 0
