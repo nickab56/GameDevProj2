@@ -24,11 +24,13 @@ public class PlayerInventory : MonoBehaviour
     private int i = 0;
 
     PlayerMovement script;
+    public AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
     {
         KeyUI.enabled = false;
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -62,21 +64,25 @@ public class PlayerInventory : MonoBehaviour
             {
                 TextScrollClone.GetComponentInChildren<Canvas>().GetComponentInChildren<TMP_Text>().text = "To be or not to be is the question\r\nBut with me, my owner is no longer being\r\nFor I am wholly absent of flesh\r\nAnd I lack that which I once protected\r\n";
                 i++;
+                audio.Play();
             }
             else if (i == 2 && Input.GetKeyDown(KeyCode.D))
             {
                 TextScrollClone.GetComponentInChildren<Canvas>().GetComponentInChildren<TMP_Text>().text = "I beat more than I'm beaten,\r\nThough I have been known to break.\r\nI can be made of gold or stone,\r\nYet still get sick and ache.\r\n";
                 i++;
+                audio.Play();
             }
             else if (i == 3 && Input.GetKeyDown(KeyCode.D))
             {
                 TextScrollClone.GetComponentInChildren<Canvas>().GetComponentInChildren<TMP_Text>().text = "They say the pen is mightier than me\r\nBut do not believe such jest\r\nFor I cut deeper than fools’ words\r\nAnd I can draw just the same\r\n";
                 i++;
+                audio.Play();
             }
         }
 
         if (Scroll && Input.GetKey(KeyCode.X))
         {
+            audio.Play();
             Scroll = false;
             script.enabled = true;
             PlayerCrosshair.enabled = true;

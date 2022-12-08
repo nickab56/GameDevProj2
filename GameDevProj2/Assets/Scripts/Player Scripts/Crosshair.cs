@@ -99,6 +99,11 @@ public class Crosshair : MonoBehaviour
             {
                 PlayerInventory = Player.GetComponent<PlayerInventory>();
                 PlayerInventory.Scroll = true;
+
+                audios = gameObject.GetComponents<AudioSource>();
+
+                audios[0].Play();
+
                 //Destroy(gameObject);
             }
         }
@@ -175,9 +180,14 @@ public class Crosshair : MonoBehaviour
             crosshairRenderer.material.color = new Color(1, 0.92f, 0.016f, 1);
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
+                audios = gameObject.GetComponents<AudioSource>();
+
+                audios[0].Play();
                 PlayerInventory = Player.GetComponent<PlayerInventory>();
                 if (PlayerInventory.Key == true)
                 {
+                    audios[1].Play();
+                    audios[2].Play();
                     doorOpen = Instantiate(doorOpen);
                     doorOpen.transform.position = gameObject.transform.position;
                     Destroy(gameObject);
