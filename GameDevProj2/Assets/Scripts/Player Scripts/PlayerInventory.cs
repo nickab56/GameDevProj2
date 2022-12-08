@@ -18,19 +18,20 @@ public class PlayerInventory : MonoBehaviour
     //public TMP_Text PickupText;
     public Crosshair PlayerCrosshair;
     public GameObject TextScroll;
-    public Image KeyUI;
 
     private GameObject TextScrollClone;
     private int i = 0;
 
-    PlayerMovement script;
+    private PlayerMovement script;
+    
+    private KeyUI keyUI;
     public AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
     {
-        KeyUI.enabled = false;
         audio = GetComponent<AudioSource>();
+        keyUI = GameObject.FindGameObjectWithTag("MainCamera").gameObject.GetComponent<KeyUI>();
     }
 
     // Update is called once per frame
@@ -92,7 +93,7 @@ public class PlayerInventory : MonoBehaviour
 
         if (Key)
         {
-            KeyUI.enabled = true;
+            keyUI.SetKey(Key);
         }
     }
 
