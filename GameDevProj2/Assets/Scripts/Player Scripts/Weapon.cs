@@ -10,12 +10,12 @@ public class Weapon : MonoBehaviour
 
     private bool inCoolDown = false;
 
-    
+    private PlayerMovement playerMovement;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerMovement = this.GetComponent<PlayerMovement>();   
     }
 
     // Update is called once per frame
@@ -29,6 +29,7 @@ public class Weapon : MonoBehaviour
             go.transform.rotation = shootPoint.transform.rotation;
             go.transform.Rotate(0f, 0f, 90f);
             TorchSwing b = go.GetComponent<TorchSwing>();
+            b.isFacingLeft = playerMovement.isFacingLeft;
             b.speed = speed;
             
             StartCoroutine(CoolDown());
