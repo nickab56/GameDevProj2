@@ -11,6 +11,8 @@ public class TorchSwing : MonoBehaviour
     new private Renderer renderer;
     private bool isInvisible;
 
+    public bool isFacingLeft = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,15 +30,17 @@ public class TorchSwing : MonoBehaviour
     private void Move()
     {
         Vector3 newPosition;
+        direction = (isFacingLeft) ? direction = new(-transform.up.x, -transform.up.y) : direction = new(transform.up.x, transform.up.y);
         if (reach == false)
         {
-            newPosition = new Vector3(speed * transform.up.x * Time.deltaTime, speed * transform.up.y * Time.deltaTime, 0);
+            newPosition = new Vector3(speed * direction.x * Time.deltaTime, speed * direction.y * Time.deltaTime, 0);
+            Debug.Log(newPosition);
             this.transform.position += newPosition;
         }
 
         if (reach == true)
         {
-            newPosition = new Vector3(-(speed * transform.up.x) * Time.deltaTime, -(speed * transform.up.y) * Time.deltaTime, 0);
+            newPosition = new Vector3(-(speed * direction.x) * Time.deltaTime, -(speed * direction.y) * Time.deltaTime, 0);
             this.transform.position += newPosition;
         }
     }

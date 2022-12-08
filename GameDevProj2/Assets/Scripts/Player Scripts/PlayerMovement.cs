@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource walk;
 
     // Get direction the player is facing (left by default)
-    bool isFacingLeft = false;
+    public bool isFacingLeft = false;
 
     // Start is called before the first frame update
     void Start()
