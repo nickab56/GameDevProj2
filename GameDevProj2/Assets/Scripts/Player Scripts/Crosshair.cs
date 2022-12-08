@@ -27,8 +27,10 @@ public class Crosshair : MonoBehaviour
     public PlayerInventory PlayerInventory;
 
     public AudioSource[] audios;
+    public ParticleSystem[] PSs;
 
     TorchAnimation script; //creates that script data type
+
 
     // Start is called before the first frame update
     void Start()
@@ -205,6 +207,11 @@ public class Crosshair : MonoBehaviour
                 audios[0].Play();
 
                 audios[1].Play();
+
+                PSs = gameObject.GetComponentsInChildren<ParticleSystem>();
+
+                PSs[0].Play();
+                PSs[1].Play();
 
             }
         }
