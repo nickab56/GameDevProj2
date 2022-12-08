@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float halfWidth = 64; // this depends on your texture size
     public GameObject Player;
 
+
     private float localSpeed = 0;
     public bool walkInCoolDown = false;
 
@@ -19,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     public bool isFacingLeft = false;
 
     private PlayerAnimation playerAnimation;
+
+    public ParticleSystem WalkPS;
 
     // Start is called before the first frame update
     void Start()
@@ -42,8 +45,7 @@ public class PlayerMovement : MonoBehaviour
         {
             direction.y = 1;
             localSpeed += speed;
-            //WalkEffect();
-            //WalkTrail();
+            WalkEffect();
             if (!walk.isPlaying)
             {
                 walk.PlayOneShot(walk.clip, .25f);
@@ -147,6 +149,24 @@ public class PlayerMovement : MonoBehaviour
         localSpeed = Mathf.Lerp(localSpeed, 0, 0.4f);
         Vector3 newPositiion = new Vector3(localSpeed * direction.x * Time.deltaTime, localSpeed * direction.y * Time.deltaTime, 0); // could also use constructor and set each
         this.transform.position += newPositiion;
+
+    }
+
+    void WalkEffect()
+    {
+        if (!walkInCoolDown)
+        {
+            walkInCoolDown = true;
+            WalkPS.Play();
+            StartCoroutine(WalkCoolDown());
+        }
+
+    }
+
+    IEnumerator WalkCoolDown()
+    {
+        yield return new WaitForSeconds(0.75f);
+        walkInCoolDown = false;
 
     }
 }
