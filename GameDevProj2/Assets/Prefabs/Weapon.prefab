@@ -148,3 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0}
   speed: 1
+  isFacingLeft: 0
+  TorchPS: {fileID: 7515890396029354108, guid: 87a1199afcc92f54994dfcaad20d5182, type: 3}
+  Player: {fileID: 0}

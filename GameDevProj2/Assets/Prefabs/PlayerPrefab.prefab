@@ -285,7 +285,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.039892774}
+  m_Offset: {x: -0.0032163002, y: -0.03667648}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -296,7 +296,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.20021442}
+  m_Size: {x: 0.1053231, y: 0.17126784}
   m_EdgeRadius: 0
 --- !u!50 &9164434269245069331
 Rigidbody2D:
@@ -390,7 +390,6 @@ MonoBehaviour:
   ScrollSpawn: 0
   PlayerCrosshair: {fileID: 2146927144345313999}
   TextScroll: {fileID: 1995695310613756243, guid: 0d273aaccf26e4341bdf8c721f43d03a, type: 3}
-  KeyUI: {fileID: 0}
   audio: {fileID: 824130533072173425}
 --- !u!114 &8024610606907256098
 MonoBehaviour:
