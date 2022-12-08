@@ -18,6 +18,11 @@ public class AI : MonoBehaviour
     private Vector2 dir;
     public float KBCurrent = 0;
     public float KBTotal = 0.2f;
+    public float KBForce = 1.5f;
+
+    // Stun implementation
+    public float StunCurrent = 0;
+    public float StunTotal = 0.4f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +36,7 @@ public class AI : MonoBehaviour
     void Update()
     {
         Vector2 temp = Vector2.zero;
-        if (KBCurrent <= 0) {
+        if (KBCurrent <= 0 && StunCurrent <= 0) {
             // Normal movement 
             if (player != null)
             {
@@ -40,9 +45,11 @@ public class AI : MonoBehaviour
         } 
         else
         {
+            Debug.Log(dir);
             // Still getting knocked back
-            temp = 1.5f * speed * Time.deltaTime * dir;
+            temp = KBForce * speed * Time.deltaTime * dir;
             KBCurrent -= Time.deltaTime;
+            StunCurrent -= Time.deltaTime;
         }
 
         transform.position += new Vector3(temp.x, temp.y, 0);
@@ -119,7 +126,9 @@ public class AI : MonoBehaviour
         {
             // Knockback
             dir = (this.transform.position - gameObject.transform.position).normalized;
+            KBForce = 1.5f;
             KBCurrent = KBTotal;
+            StunCurrent = StunTotal + KBCurrent;
             StartCoroutine(FreezeAnimation());
 
             // Provoked Enemy, begin attack
@@ -127,6 +136,8 @@ public class AI : MonoBehaviour
         }
         if (gameObject.tag == "Boundary")
         {
+            Debug.Log("HIT BOUNDARY");
+            KBForce = 0.65f;
             dir *= -1;
         }
     }
@@ -141,7 +152,7 @@ public class AI : MonoBehaviour
     IEnumerator ChangeScene()
     {
         yield return new WaitForSeconds(2f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverDeathScene");
     }
 }
 

@@ -17,6 +17,19 @@ public class PlayerAnimation : MonoBehaviour
         StartCoroutine(PlayAnimation());
     }
 
+    private void OnEnable()
+    {
+        renderer = this.GetComponent<SpriteRenderer>();
+        StartCoroutine(PlayAnimation());
+    }
+
+    public void OnDisable()
+    {
+        StopAllCoroutines();
+        renderer.sprite = playerFrames[0];
+        currentSprite = 0;
+    }
+
     // Update is called once per frame
     void Update()
     {

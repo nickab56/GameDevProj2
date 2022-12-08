@@ -18,10 +18,12 @@ public class PlayerMovement : MonoBehaviour
     // Get direction the player is facing (left by default)
     public bool isFacingLeft = false;
 
+    private PlayerAnimation playerAnimation;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        playerAnimation = this.GetComponent<PlayerAnimation>();
     }
 
     // Update is called once per frame
@@ -100,6 +102,14 @@ public class PlayerMovement : MonoBehaviour
         if (direction != Vector2.zero)
         {
             direction.Normalize();
+            if (!playerAnimation.isActiveAndEnabled)
+            {
+                playerAnimation.enabled = true;
+            }
+        }
+        else
+        {
+            playerAnimation.enabled = false;
         }
 
         if ((Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightArrow)))

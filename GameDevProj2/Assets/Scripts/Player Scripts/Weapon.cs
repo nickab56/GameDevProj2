@@ -38,7 +38,7 @@ public class Weapon : MonoBehaviour
 
     IEnumerator CoolDown()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         inCoolDown = false;
     }
 }
