@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3673029596630092368}
   - component: {fileID: 430625030}
   - component: {fileID: 430625031}
-  - component: {fileID: 430625029}
   m_Layer: 0
   m_Name: KeyPrefab
   m_TagString: KeyPickUp
@@ -55,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b7a43c4540a01924c8f491c010e4b989, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -134,17 +133,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 3.18}
   m_EdgeRadius: 0
---- !u!114 &430625029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6177099094620725635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e272b22c9b8124094b3474fc8a169d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  PlayerInventory: {fileID: 0}

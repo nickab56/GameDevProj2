@@ -219,6 +219,7 @@ public class Crosshair : MonoBehaviour
         if (gameObject.tag == "Treasure")
         {
             this.transform.localScale = new Vector3(0.12f, 0.12f, 0);
+            crosshairRenderer.material.color = new Color(1, 0.92f, 0.016f, 1);
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
