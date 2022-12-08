@@ -120,6 +120,7 @@ public class AI : MonoBehaviour
         if (gameObject.tag == "Player")
         {
             Destroy(gameObject);
+            Constants.C.PlayerAlive = false;
             StartCoroutine(ChangeScene());
         };
         if (gameObject.tag == "Weapon")
