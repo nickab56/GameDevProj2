@@ -125,6 +125,10 @@ public class AI : MonoBehaviour
             // Provoked Enemy, begin attack
             aiType = AIType.attack;
         }
+        if (gameObject.tag == "Boundary")
+        {
+            dir *= -1;
+        }
     }
 
     public IEnumerator FreezeAnimation()
