@@ -205,7 +205,6 @@ public class Crosshair : MonoBehaviour
                 if (PlayerInventory.Key == true)
                 {
                     audios[1].Play();
-                    audios[2].Play();
                     doorOpen = Instantiate(doorOpen);
                     doorOpen.transform.position = gameObject.transform.position;
                     Destroy(gameObject);
@@ -222,9 +221,7 @@ public class Crosshair : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
 
-                script = gameObject.GetComponent<TorchAnimation>();
-
-                script.enabled = true;
+                gameObject.GetComponent<TorchAnimation>().enabled = true;
 
                 gameObject.GetComponentInChildren<Light>().enabled = true;
 
