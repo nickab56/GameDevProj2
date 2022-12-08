@@ -19,7 +19,7 @@ public class DungeonGeneration : MonoBehaviour
     public GameObject Rooomswirl1111;
     public GameObject BlankRoom;
     public GameObject Key;
-    
+    public GameObject Player;
 
 
     // The Acutally Rooms
@@ -209,5 +209,8 @@ public class DungeonGeneration : MonoBehaviour
             Key.transform.position = new Vector3(-46, 23, -1);
         if (temp == 4)
             Key.transform.position = new Vector3(-23, 0, -1);
+
+        Player = Instantiate(Player);
+        Player.transform.position = new Vector3(0, -92, 0);
     }
 }
