@@ -112,6 +112,7 @@ MonoBehaviour:
   Player: {fileID: 9164434269245069329}
   PlayerInventory: {fileID: 0}
   audios: []
+  PSs: []
 --- !u!58 &8119570176203363109
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -336,6 +337,7 @@ MonoBehaviour:
   Player: {fileID: 9164434269245069329}
   walkInCoolDown: 0
   walk: {fileID: 1643484510}
+  isFacingLeft: 0
 --- !u!114 &7227618100133344403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,12 +387,9 @@ MonoBehaviour:
   Scroll: 0
   TorchLight: {fileID: 1832341622125717335, guid: fb59148411e4c284b95c8b39fd616195, type: 3}
   ScrollSpawn: 0
-  ScrollText: {fileID: 0}
-  PickupText: {fileID: 0}
   PlayerCrosshair: {fileID: 2146927144345313999}
-  Player: {fileID: 0}
-  TextScrollClone: {fileID: 0}
   TextScroll: {fileID: 1995695310613756243, guid: 0d273aaccf26e4341bdf8c721f43d03a, type: 3}
+  KeyUI: {fileID: 0}
 --- !u!114 &8024610606907256098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,7 +404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 7289356673960086562, guid: c2c46bcb116552a46a0d5d5907b960b5, type: 3}
   shootPoint: {fileID: 5393663474865751054}
-  speed: 3
+  speed: 2
 --- !u!114 &5088776679274760331
 MonoBehaviour:
   m_ObjectHideFlags: 0

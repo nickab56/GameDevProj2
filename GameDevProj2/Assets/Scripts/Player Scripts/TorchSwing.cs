@@ -18,7 +18,7 @@ public class TorchSwing : MonoBehaviour
     {
         StartCoroutine(retreat());
         //direction = new Vector2(1, 0);
-        Destroy(this.gameObject, .65f);
+        Destroy(this.gameObject, .75f);
     }
 
     // Update is called once per frame
@@ -48,9 +48,9 @@ public class TorchSwing : MonoBehaviour
     IEnumerator retreat()
     {
         reach = true;
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(.35f);
         reach = false;
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(.35f);
         retreat();
     }
 }
