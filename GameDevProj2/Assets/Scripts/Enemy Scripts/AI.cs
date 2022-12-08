@@ -152,7 +152,7 @@ public class AI : MonoBehaviour
     IEnumerator ChangeScene()
     {
         yield return new WaitForSeconds(2f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverDeathScene");
     }
 }
 
