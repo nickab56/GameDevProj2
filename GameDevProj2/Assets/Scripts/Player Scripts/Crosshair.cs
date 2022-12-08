@@ -127,6 +127,12 @@ public class Crosshair : MonoBehaviour
 
                 audios[1].Play();
 
+
+                PSs = gameObject.GetComponentsInChildren<ParticleSystem>();
+
+                PSs[0].Play();
+                PSs[1].Play();
+
             }
         }
 
@@ -149,6 +155,12 @@ public class Crosshair : MonoBehaviour
 
                 audios[1].Play();
 
+
+                PSs = gameObject.GetComponentsInChildren<ParticleSystem>();
+
+                PSs[0].Play();
+                PSs[1].Play();
+
             }
         }
 
@@ -170,6 +182,12 @@ public class Crosshair : MonoBehaviour
                 audios[0].Play();
 
                 audios[1].Play();
+
+
+                PSs = gameObject.GetComponentsInChildren<ParticleSystem>();
+
+                PSs[0].Play();
+                PSs[1].Play();
 
             }
         }

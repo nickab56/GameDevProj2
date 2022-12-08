@@ -13,17 +13,11 @@ public class TorchSwing : MonoBehaviour
 
     public bool isFacingLeft = false;
 
-    public ParticleSystem TorchPS;
-    public Transform Player;
-
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(retreat());
         //direction = new Vector2(1, 0);
-        Player = GameObject.FindWithTag("Player").transform;
-        TorchPS = Instantiate(TorchPS,Player);
-        TorchPS.transform.position = Player.position;
         Destroy(this.gameObject, .75f);
     }
 

@@ -25,9 +25,14 @@ public class TorchPuzzleNA : MonoBehaviour
     private int[] Answer = new int[3];
     private int numActiveLights = 0;
 
+    public ParticleSystem[] PSs;
+
+    public AudioSource[] audios;
+
     // Start is called before the first frame update
     void Start()
     {
+        audios = GetComponents<AudioSource>();
         SkullTorch = GameObject.FindGameObjectWithTag("SkullTorch");
         if (SkullTorch == null)
         {
@@ -82,6 +87,7 @@ public class TorchPuzzleNA : MonoBehaviour
         {
             if (CheckPuzzle())
             {
+                audios[0].Play();
                 doorOpen = Instantiate(doorOpen);
                 doorOpen.transform.position = PuzzleDoor.transform.position;
                 Destroy(PuzzleDoor);
@@ -89,21 +95,37 @@ public class TorchPuzzleNA : MonoBehaviour
             }
             else
             {
+                audios[1].Play();
                 numActiveLights = 0;
                 // Disable torches and stop animations
                 SwordTorch.GetComponentInChildren<Light>().enabled = false;
                 SwordTorch.GetComponent<TorchAnimation>().enabled = false;
                 SwordTorch.GetComponent<SpriteRenderer>().sprite = NoFlame;
+
+                PSs = SwordTorch.GetComponentsInChildren<ParticleSystem>();
+                PSs[0].Stop();
+                PSs[1].Stop();
+
                 Sword = false;
 
                 SkullTorch.GetComponentInChildren<Light>().enabled = false;
                 SkullTorch.GetComponent<TorchAnimation>().enabled = false;
                 SkullTorch.GetComponent<SpriteRenderer>().sprite = NoFlame;
+                PSs = SkullTorch.GetComponentsInChildren<ParticleSystem>();
+                PSs[0].Stop();
+                PSs[1].Stop();
+
                 Skull = false;
+
+
 
                 HeartTorch.GetComponentInChildren<Light>().enabled = false;
                 HeartTorch.GetComponent<TorchAnimation>().enabled = false;
                 HeartTorch.GetComponent<SpriteRenderer>().sprite = NoFlame;
+                PSs = HeartTorch.GetComponentsInChildren<ParticleSystem>();
+                PSs[0].Stop();
+                PSs[1].Stop();
+
                 Heart = false;
                 // Possibly a sound effect?
             }
