@@ -42,17 +42,12 @@ public class Crosshair : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
-
+    { 
         Vector3 playerToCursor = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-
         Vector3 dir = playerToCursor.normalized;
-
         Vector3 cursorVector = dir * radius;
 
         transform.position = player.transform.position + cursorVector;
-
     }
 
 
@@ -101,10 +96,7 @@ public class Crosshair : MonoBehaviour
                 PlayerInventory.Scroll = true;
 
                 audios = gameObject.GetComponents<AudioSource>();
-
                 audios[0].Play();
-
-                //Destroy(gameObject);
             }
         }
 
@@ -116,23 +108,17 @@ public class Crosshair : MonoBehaviour
             {
 
                 script = gameObject.GetComponent<TorchAnimation>();
-
                 script.enabled = true;
 
                 gameObject.GetComponentInChildren<Light>().enabled = true;
 
                 audios = gameObject.GetComponents<AudioSource>();
-
                 audios[0].Play();
-
                 audios[1].Play();
 
-
                 PSs = gameObject.GetComponentsInChildren<ParticleSystem>();
-
                 PSs[0].Play();
                 PSs[1].Play();
-
             }
         }
 
@@ -142,25 +128,18 @@ public class Crosshair : MonoBehaviour
             crosshairRenderer.material.color = new Color(1, 0.92f, 0.016f, 1);
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-
                 script = gameObject.GetComponent<TorchAnimation>();
-
                 script.enabled = true;
 
                 gameObject.GetComponentInChildren<Light>().enabled = true;
 
                 audios = gameObject.GetComponents<AudioSource>();
-
                 audios[0].Play();
-
                 audios[1].Play();
 
-
                 PSs = gameObject.GetComponentsInChildren<ParticleSystem>();
-
                 PSs[0].Play();
                 PSs[1].Play();
-
             }
         }
 
@@ -170,25 +149,18 @@ public class Crosshair : MonoBehaviour
             crosshairRenderer.material.color = new Color(1, 0.92f, 0.016f, 1);
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-
                 script = gameObject.GetComponent<TorchAnimation>();
-
                 script.enabled = true;
 
                 gameObject.GetComponentInChildren<Light>().enabled = true;
 
                 audios = gameObject.GetComponents<AudioSource>();
-
                 audios[0].Play();
-
                 audios[1].Play();
 
-
                 PSs = gameObject.GetComponentsInChildren<ParticleSystem>();
-
                 PSs[0].Play();
                 PSs[1].Play();
-
             }
         }
 
@@ -221,24 +193,17 @@ public class Crosshair : MonoBehaviour
             crosshairRenderer.material.color = new Color(1, 0.92f, 0.016f, 1);
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-
                 gameObject.GetComponent<TorchAnimation>().enabled = true;
-
                 gameObject.GetComponentInChildren<Light>().enabled = true;
-
                 gameObject.GetComponent<SpriteRenderer>().enabled = true;
 
                 audios = gameObject.GetComponents<AudioSource>();
-
                 audios[0].Play();
-
                 audios[1].Play();
 
                 PSs = gameObject.GetComponentsInChildren<ParticleSystem>();
-
                 PSs[0].Play();
                 PSs[1].Play();
-
             }
         }
 

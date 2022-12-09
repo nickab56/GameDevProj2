@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class AI : MonoBehaviour
 {
-
     public enum AIType { waypoints, attack, none };
     public AIType aiType = AIType.none;
-    public float viewAngle = 5.0f;
     public float speed = 3;
 
     private WayPoints waypoints;
@@ -94,14 +92,9 @@ public class AI : MonoBehaviour
 
     private Vector2 CheckPlayerView()
     {
-        Vector3 targetDir = player.transform.position - this.transform.position;
-        Vector3 up = this.transform.up;
-
-        float angle = Vector3.Angle(targetDir, up);
         float dist = Vector3.Distance(this.transform.position, player.transform.position);
 
-        //Debug.Log("Angle: " + angle);
-        if (angle < viewAngle)
+        if (dist <= 5.0f)
         {
             aiType = AIType.attack;
         }
@@ -137,7 +130,6 @@ public class AI : MonoBehaviour
         }
         if (gameObject.tag == "Boundary")
         {
-            Debug.Log("HIT BOUNDARY");
             KBForce = 0.65f;
             dir *= -1;
         }
