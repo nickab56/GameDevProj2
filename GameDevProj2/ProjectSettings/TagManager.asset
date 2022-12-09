@@ -22,6 +22,7 @@ TagManager:
   - Treasure
   - HighTime
   - Gametime
+  - MainCanvas
   layers:
   - Default
   - TransparentFX
