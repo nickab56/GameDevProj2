@@ -199,13 +199,14 @@ public class Crosshair : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 audios = gameObject.GetComponents<AudioSource>();
-
                 audios[0].Play();
+
                 PlayerInventory = Player.GetComponent<PlayerInventory>();
                 if (PlayerInventory.Key == true)
                 {
-                    audios[1].Play();
                     doorOpen = Instantiate(doorOpen);
+                    audios = doorOpen.GetComponents<AudioSource>();
+                    audios[0].Play();
                     doorOpen.transform.position = gameObject.transform.position;
                     Destroy(gameObject);
                 }
