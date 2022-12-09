@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         {
             direction.x = 1;
             localSpeed += speed;
-            //WalkEffect();
+            WalkEffect();
             //WalkTrail();
             if (isFacingLeft)
             {
@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
         {
             direction.y = -1;
             localSpeed += speed;
-            //WalkEffect();
+            WalkEffect();
             //WalkTrail();
             if (!walk.isPlaying)
             {
@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
         {
             direction.x = -1;
             localSpeed += speed;
-            //WalkEffect();
+            WalkEffect();
             // WalkTrail();
             if (!isFacingLeft)
             {
