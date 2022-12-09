@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
                 Player.transform.localScale = new Vector3(-Player.transform.localScale.x, Player.transform.localScale.y, Player.transform.localScale.z);
                 isFacingLeft = false;
             }
+            WalkEffect();
             if (!walk.isPlaying)
             {
                 walk.PlayOneShot(walk.clip, .25f);
@@ -78,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
             localSpeed += speed;
             //WalkEffect();
             //WalkTrail();
+            WalkEffect();
             if (!walk.isPlaying)
             {
                 walk.PlayOneShot(walk.clip, .25f);
@@ -95,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
                 Player.transform.localScale = new Vector3(-Player.transform.localScale.x, Player.transform.localScale.y, Player.transform.localScale.z);
                 isFacingLeft = true;
             }
+            WalkEffect();
             if (!walk.isPlaying)
             {
                 walk.PlayOneShot(walk.clip, .25f);

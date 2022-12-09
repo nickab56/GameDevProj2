@@ -70,6 +70,8 @@ public class Crosshair : MonoBehaviour
             {
                 PlayerInventory = Player.GetComponent<PlayerInventory>();
                 PlayerInventory.Key = true;
+                audios = gameObject.GetComponents<AudioSource>();
+                audios[0].Play();
                 Destroy(gameObject);
                 
             }
