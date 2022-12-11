@@ -9,7 +9,7 @@ public class Manager : MonoBehaviour
 
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     // Update is called once per frame
